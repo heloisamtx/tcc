@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiggyBank - Login</title>
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Adigiana+Toybox&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="background">
+        <div id="app">
+            <!-- Tela Inicial -->
+            <div id="tela-inicial" class="screen">
+                <div class="logo-container">
+                    <h1 class="logo">PiggyBank</h1>
+                    <img src="imagens/logo.png" alt="Logo do PiggyBank" class="logo-imagem">
+                </div>
+                <button id="btn-entrar" class="btn btn-enter">Entrar</button>
+                <p class="frase-cadastro">Ainda não tem uma conta?</p>
+                <a href="#" id="link-cadastro" class="link-cadastro">Clique aqui para se cadastrar</a>
+            </div>
+
+            <!-- Tela de Login -->
+            <div id="tela-login" class="screen hidden">
+                <button class="btn-back" onclick="voltarParaInicial()">
+                    <img src="imagens/voltar.png" alt="Voltar" class="btn-back-img">
+                </button>
+                <div class="logo-container">
+                    <h1 class="logo">PiggyBank</h1>
+                    <img src="imagens/logo.png" alt="Logo do PiggyBank" class="logo-imagem">
+                </div>
+                <h2>Bem-vindo</h2>
+                <form>
+                    <input type="email" placeholder="Seu email" required>
+                    <input type="password" placeholder="Sua senha" required>
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+            </div>
+
+            <!-- Tela de Cadastro -->
+            <div id="tela-cadastro" class="screen hidden">
+                <button class="btn-back" onclick="voltarParaInicial()">
+                    <img src="imagens/voltar.png" alt="Voltar" class="btn-back-img">
+                </button>
+                <div class="logo-container">
+                    <h1 class="logo">PiggyBank</h1>
+                    <img src="imagens/logo.png" alt="Logo do PiggyBank" class="logo-imagem">
+                </div>
+                <h2>Crie sua conta</h2>
+                <form>
+                    <input type="email" placeholder="Seu email" required>
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="text" placeholder="Seu endereço" required>
+                    <input type="password" placeholder="Sua senha" required>
+                    <button type="submit" class="btn">Criar conta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Dashboard -->
+<div id="tela-dashboard" class="screen hidden">
+    <header>
+        <button class="btn-back" onclick="voltarParaInicial()">
+            <img src="imagens/voltar.png" alt="Voltar" class="btn-back-img">
+        </button>
+        <h2>Olá, "nome"!</h2>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h3>Saldo disponível</h3>
+                <p>R$ 0,00</p>
+                <button>Usar o meu dinheiro</button>
+            </div>
+            <div>
+                <button>Minhas metas</button>
+                <button>Meus gastos</button>
+                <button>Minhas tarefas</button>
+            </div>
+        </section>
+        <section>
+            <h3>Minhas metas</h3>
+            <div>
+                <p>Meta 1</p>
+                <p>Meta 2</p>
+            </div>
+        </section>
+        <footer>
+            <p>Quer ajuda para organizar sua mesada?</p>
+            <button>Convide um responsável</button>
+        </footer>
+    </main>
+</div>
+
+
+    <!-- JavaScript -->
+    <script>
+        function voltarParaInicial() {
+            document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
+            document.getElementById('tela-inicial').classList.remove('hidden');
+        }
+
+        document.getElementById('btn-entrar').addEventListener('click', () => {
+            document.getElementById('tela-inicial').classList.add('hidden');
+            document.getElementById('tela-login').classList.remove('hidden');
+        });
+
+        document.getElementById('link-cadastro').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('tela-inicial').classList.add('hidden');
+            document.getElementById('tela-cadastro').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
