@@ -76,4 +76,6 @@ document.querySelector('#tela-cadastro form').addEventListener('submit', (e) => 
 // Botão de voltar para a tela inicial
 function voltarParaInicial() {
     showScreen('tela-inicial'); // Volta à tela inicial
+
+    
 }
