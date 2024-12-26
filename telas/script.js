@@ -1,14 +1,7 @@
 // Função para alternar entre telas
 function showScreen(screenId) {
-    // Seleciona todas as telas
-    const screens = document.querySelectorAll('.screen');
-    screens.forEach((screen) => {
-        if (screen.id === screenId) {
-            screen.classList.remove('hidden'); // Exibe a tela especificada
-        } else {
-            screen.classList.add('hidden'); // Esconde as outras telas
-        }
-    });
+    document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden')); // Esconde todas as telas
+    document.getElementById(screenId).classList.remove('hidden'); // Exibe a tela específica
 }
 
 // Função principal para inicializar os eventos
@@ -48,34 +41,62 @@ function initializeScreenNavigation() {
     showScreen('tela-inicial');
 }
 
-// Aguarda o carregamento completo do DOM
-document.addEventListener('DOMContentLoaded', initializeScreenNavigation);
-// Função para exibir uma tela específica
-function showScreen(screenId) {
-    document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
-    document.getElementById(screenId).classList.remove('hidden');
+// Função para simular o login
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Simulação de login (você pode substituir pela lógica de autenticação real)
+    if (username === 'user' && password === 'password') {
+        alert('Login bem-sucedido!');
+        showScreen('tela-dashboard'); // Exibe a tela do dashboard
+    } else {
+        alert('Usuário ou senha incorretos.');
+    }
 }
 
-// Evento ao clicar no botão "Entrar"
-document.getElementById('btn-entrar').addEventListener('click', () => {
-    showScreen('tela-dashboard'); // Mostra a tela do dashboard
-});
+// Função para simular o cadastro
+function register() {
+    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value;
+    const password = document.getElementById('password').value;
 
-// Evento ao clicar no link de cadastro
-document.getElementById('link-cadastro').addEventListener('click', (e) => {
-    e.preventDefault();
-    showScreen('tela-cadastro'); // Mostra a tela de cadastro
-});
+    // Simulação de registro (você pode substituir pela lógica de registro real)
+    if (email && name && password) {
+        alert('Cadastro concluído!');
+        showScreen('tela-dashboard'); // Exibe a tela do dashboard
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
+}
 
-// Evento para criar conta
-document.querySelector('#tela-cadastro form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    showScreen('tela-dashboard'); // Mostra a tela do dashboard
-});
-
-// Botão de voltar para a tela inicial
-function voltarParaInicial() {
+// Evento para logout
+function logout() {
+    alert('Você saiu do sistema.');
     showScreen('tela-inicial'); // Volta à tela inicial
-
-    
 }
+
+// Evento de submissão do formulário de login
+document.getElementById('login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    // Simulação de login (substituir por integração com backend)
+    if (email === 'teste@teste.com' && password === '123456') {
+        showScreen('tela-dashboard'); // Exibe o dashboard
+    } else {
+        alert('Email ou senha incorretos.');
+    }
+});
+
+// Evento de submissão do formulário de cadastro
+document.getElementById('cadastro-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nome = document.getElementById('cadastro-nome').value;
+    alert(`Conta criada com sucesso para ${nome}!`);
+    showScreen('tela-dashboard'); // Exibe o dashboard após o cadastro
+});
+
+// Inicializa a navegação entre telas ao carregar a página
+document.addEventListener('DOMContentLoaded', initializeScreenNavigation);
