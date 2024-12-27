@@ -1,5 +1,5 @@
-/* Reset geral */
-* {
+ /* Reset geral */ 
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -297,14 +297,15 @@ footer {
 }
 
 footer p {
-    font-size: 14px;
-    color: #777;
+    font-size: 20px;
+    font-family: league spartan;
+    color: white;
     margin-bottom: 10px;
 }
 
 footer button {
     font-size: 14px;
-    background: #4caf50;
+    background: #3792ff;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -317,7 +318,7 @@ footer button:hover {
     background: #43a047;
 }
 header {
-    background-image: url('imagens/fundo-cabecalho.jpg'); /* Substitua o caminho da imagem conforme necessário */
+    background-image: url('imagens/fundo-cabecalho.png'); /* Substitua o caminho da imagem conforme necessário */
     background-size: cover; /* Faz com que a imagem ocupe toda a área do cabeçalho */
     background-position: center; /* Centraliza a imagem no cabeçalho */
     height: 200px; /* Ajuste a altura conforme necessário */
@@ -344,4 +345,76 @@ header .btn-logout {
 
 header .btn-logout:hover {
     background-color: #c0392b; /* Cor do botão ao passar o mouse */
+}
+/* Estilo do botão */
+.btn {
+    
+    color: white; /* Cor do texto */
+    padding: 12px 24px; /* Espaçamento interno */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Cantos arredondados */
+    font-family: league spartan;
+    font-size: 20px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+/* Estilo do botão quando o mouse passa por cima */
+.btn:hover {
+    background-color: #3792ff; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo de foco (quando o botão é clicado ou recebe o foco) */
+.btn:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    box-shadow: 0 0 10px #3792ff(0, 128, 0, 0.5); /* Adiciona um brilho ao redor */
+}
+/* Estilo para o botão "Convide um responsável" */
+#btn-convite-responsavel {
+    background-color: #007BFF; /* Azul claro */
+    color: white; /* Texto branco */
+    padding: 12px 24px; /* Espaçamento interno */
+    border: none; /* Remove borda */
+    border-radius: 8px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+/* Estilo do botão "Convide um responsável" quando o mouse passa por cima */
+.btn-convide:hover {
+    background-color: #0056b3; /* Cor azul mais escura ao passar o mouse */
+}
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-image: url('imagens/rodape.png'); /* Substitua pelo caminho da imagem */
+    background-size: cover; /* Faz com que a imagem ocupe toda a área do rodapé */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    border-radius: 10px;
+}
+
+footer p {
+    font-size: 20px;
+    font-family: 'League Spartan', sans-serif;
+    color: white;
+    margin-bottom: 10px;
+}
+
+footer button {
+    font-size: 14px;
+    background: #3792ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+footer button:hover {
+    background: #43a047;
 }

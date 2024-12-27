@@ -41,50 +41,18 @@ function initializeScreenNavigation() {
     showScreen('tela-inicial');
 }
 
-// Função para simular o login
-function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    // Simulação de login (você pode substituir pela lógica de autenticação real)
-    if (username === 'user' && password === 'password') {
-        alert('Login bem-sucedido!');
-        showScreen('tela-dashboard'); // Exibe a tela do dashboard
-    } else {
-        alert('Usuário ou senha incorretos.');
-    }
-}
-
-// Função para simular o cadastro
-function register() {
-    const email = document.getElementById('email').value;
-    const name = document.getElementById('name').value;
-    const password = document.getElementById('password').value;
-
-    // Simulação de registro (você pode substituir pela lógica de registro real)
-    if (email && name && password) {
-        alert('Cadastro concluído!');
-        showScreen('tela-dashboard'); // Exibe a tela do dashboard
-    } else {
-        alert('Por favor, preencha todos os campos.');
-    }
-}
-
-// Evento para logout
-function logout() {
-    alert('Você saiu do sistema.');
-    showScreen('tela-inicial'); // Volta à tela inicial
-}
-
 // Evento de submissão do formulário de login
 document.getElementById('login-form').addEventListener('submit', (e) => {
     e.preventDefault();
+    
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
     // Simulação de login (substituir por integração com backend)
     if (email === 'teste@teste.com' && password === '123456') {
-        showScreen('tela-dashboard'); // Exibe o dashboard
+        // Extrai o nome do usuário do e-mail (parte antes do '@')
+        const nomeUsuario = email.split('@')[0];  
+        mostrarDashboard(nomeUsuario);  // Chama a função para exibir o nome no dashboard
     } else {
         alert('Email ou senha incorretos.');
     }
@@ -98,5 +66,31 @@ document.getElementById('cadastro-form').addEventListener('submit', (e) => {
     showScreen('tela-dashboard'); // Exibe o dashboard após o cadastro
 });
 
+// Função para mostrar o dashboard com o nome do usuário
+function mostrarDashboard(nomeUsuario) {
+    // Esconde todas as telas
+    document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
+    
+    // Exibe a tela do dashboard
+    document.getElementById('tela-dashboard').classList.remove('hidden');
+    
+    // Define o nome do usuário na tela do dashboard
+    document.getElementById('nome-usuario').textContent = nomeUsuario || 'Usuário';
+}
+
+// Evento para logout
+function logout() {
+    alert('Você saiu do sistema.');
+    showScreen('tela-inicial'); // Volta à tela inicial
+}
+
 // Inicializa a navegação entre telas ao carregar a página
 document.addEventListener('DOMContentLoaded', initializeScreenNavigation);
+// Função para compartilhar o link
+function compartilharLink() {
+    const link = "http://seusite.com";  // Substitua com o link da sua plataforma
+    const texto = "Oi! Venha conhecer o PiggyBank e ajude a organizar minha mesada. Aqui está o link: " + link;
+
+    // Abre o aplicativo de e-mail com o link
+    window.location.href = "mailto:?subject=Convite para usar o PiggyBank&body=" + encodeURIComponent(texto);
+}
