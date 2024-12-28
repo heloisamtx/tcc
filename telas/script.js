@@ -10,6 +10,7 @@ function initializeScreenNavigation() {
     const btnEntrar = document.getElementById('btn-entrar');
     const linkCadastro = document.getElementById('link-cadastro');
     const btnVoltar = document.querySelectorAll('.btn-back'); // Seleciona todos os botões de voltar
+    const logoutIcon = document.getElementById('logout-icon');
 
     // Adiciona evento ao botão "Entrar"
     if (btnEntrar) {
@@ -37,6 +38,13 @@ function initializeScreenNavigation() {
         });
     }
 
+    // Evento para o ícone de logout
+    if (logoutIcon) {
+        logoutIcon.addEventListener('click', () => {
+            logout();
+        });
+    }
+
     // Garante que a tela inicial seja exibida ao carregar a página
     showScreen('tela-inicial');
 }
@@ -44,15 +52,14 @@ function initializeScreenNavigation() {
 // Evento de submissão do formulário de login
 document.getElementById('login-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
     // Simulação de login (substituir por integração com backend)
     if (email === 'teste@teste.com' && password === '123456') {
-        // Extrai o nome do usuário do e-mail (parte antes do '@')
-        const nomeUsuario = email.split('@')[0];  
-        mostrarDashboard(nomeUsuario);  // Chama a função para exibir o nome no dashboard
+        const nomeUsuario = email.split('@')[0]; // Extrai o nome do usuário do e-mail
+        mostrarDashboard(nomeUsuario);
     } else {
         alert('Email ou senha incorretos.');
     }
@@ -61,6 +68,7 @@ document.getElementById('login-form').addEventListener('submit', (e) => {
 // Evento de submissão do formulário de cadastro
 document.getElementById('cadastro-form').addEventListener('submit', (e) => {
     e.preventDefault();
+
     const nome = document.getElementById('cadastro-nome').value;
     alert(`Conta criada com sucesso para ${nome}!`);
     showScreen('tela-dashboard'); // Exibe o dashboard após o cadastro
@@ -70,27 +78,52 @@ document.getElementById('cadastro-form').addEventListener('submit', (e) => {
 function mostrarDashboard(nomeUsuario) {
     // Esconde todas as telas
     document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
-    
+
     // Exibe a tela do dashboard
     document.getElementById('tela-dashboard').classList.remove('hidden');
-    
+
     // Define o nome do usuário na tela do dashboard
-    document.getElementById('nome-usuario').textContent = nomeUsuario || 'Usuário';
+    const nomeElemento = document.getElementById('nome-usuario');
+    if (nomeElemento) {
+        nomeElemento.textContent = nomeUsuario || 'Usuário';
+    }
 }
 
-// Evento para logout
+// Função para logout
 function logout() {
     alert('Você saiu do sistema.');
     showScreen('tela-inicial'); // Volta à tela inicial
 }
 
-// Inicializa a navegação entre telas ao carregar a página
-document.addEventListener('DOMContentLoaded', initializeScreenNavigation);
 // Função para compartilhar o link
 function compartilharLink() {
-    const link = "http://seusite.com";  // Substitua com o link da sua plataforma
+    const link = "http://seusite.com"; // Substitua com o link da sua plataforma
     const texto = "Oi! Venha conhecer o PiggyBank e ajude a organizar minha mesada. Aqui está o link: " + link;
 
     // Abre o aplicativo de e-mail com o link
     window.location.href = "mailto:?subject=Convite para usar o PiggyBank&body=" + encodeURIComponent(texto);
 }
+
+// Inicializa a navegação entre telas ao carregar a página
+document.addEventListener('DOMContentLoaded', initializeScreenNavigation);
+// Seleciona os elementos
+const saldoBtn = document.querySelector('.saldo-btn');
+const saldoInput = document.getElementById('saldo-input');
+const valorSaldo = document.getElementById('valor-saldo');
+
+// Evento para mostrar o campo de entrada ao clicar na imagem
+saldoBtn.addEventListener('click', () => {
+    saldoInput.classList.toggle('visible'); // Alterna a visibilidade do input
+    saldoInput.focus(); // Foca no campo de entrada
+});
+
+// Evento para atualizar o saldo quando o valor for alterado
+saldoInput.addEventListener('input', (e) => {
+    const value = e.target.value;
+    valorSaldo.textContent = `R$ ${parseFloat(value).toFixed(2)}`; // Atualiza o texto do saldo
+});
+
+// Fecha o campo de entrada quando o valor for confirmado (ao pressionar Enter)
+saldoInput.addEventListener('blur', () => {
+    saldoInput.classList.remove('visible'); // Esconde o campo de entrada
+});

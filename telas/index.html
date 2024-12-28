@@ -67,15 +67,19 @@
             <!-- Tela de Dashboard -->
             <div id="tela-dashboard" class="screen hidden">
                 <header>
-                    <h2>Olá, <span id="nome-usuario">Usuário</span>!</h2>
-                    <button class="btn-logout" onclick="logout()">Sair</button>
+                    <img id="logout-icon" src="imagens/logout.png" alt="Logout" class="logout-icon" />
+                    <h2>Olá, usuário</h2>
                 </header>
+
                 <main>
                     <section>
-                        <h3>Saldo disponível</h3>
-                        <p>R$ 0,00</p>
-                        <button>Usar o meu dinheiro</button>
-                    </section>
+                        <div class="saldo-container">
+                            <section id="saldo" class="saldo">
+                                <h3>Saldo disponível</h3>
+                                <p>R$ 0,00</p>
+                            </section >                          
+                        
+                    
                     <section>
                         <h3>Minhas metas</h3>
                         <div>
@@ -86,7 +90,6 @@
                     <footer>
                         <p>Quer ajuda para organizar sua mesada?</p>
                         <button class="btn" onclick="compartilharLink()">Convide um responsável</button>
-
                     </footer>
                 </main>
             </div>
@@ -95,12 +98,10 @@
 
     <footer>
         <p>Obrigado por visitar o nosso site!</p>
-        <button>Desconectar</button>
     </footer>
-    
 
     <!-- Scripts -->
-    <script src="script.js"></script> <!-- Link para o seu arquivo JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>

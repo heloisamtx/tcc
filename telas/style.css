@@ -362,12 +362,15 @@ header .btn-logout:hover {
 /* Estilo do botão quando o mouse passa por cima */
 .btn:hover {
     background-color: #3792ff; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 0 10px rgba(55, 146, 255, 0.5);
+
 }
 
 /* Estilo de foco (quando o botão é clicado ou recebe o foco) */
 .btn:focus {
     outline: none; /* Remove a borda de foco padrão */
-    box-shadow: 0 0 10px #3792ff(0, 128, 0, 0.5); /* Adiciona um brilho ao redor */
+    box-shadow: 0 0 10px rgba(55, 146, 255, 0.5);
+
 }
 /* Estilo para o botão "Convide um responsável" */
 #btn-convite-responsavel {
@@ -418,3 +421,92 @@ footer button {
 footer button:hover {
     background: #43a047;
 }
+
+
+header {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+    padding: 0 20px; /* Espaçamento interno */
+    background-image: url('imagens/fundo-cabecalho.png');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    color: white;
+    gap: 5px; /* Reduzido o espaçamento entre os elementos */
+}
+
+header .logout-icon {
+    width: 35px; /* Largura da imagem (reduzido para diminuir o espaço) */
+    height: 35px; /* Altura da imagem (reduzido para diminuir o espaço) */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: transform 0.2s ease; /* Transição suave ao interagir */
+}
+
+header .logout-icon:hover {
+    transform: scale(1.1); /* Animação de zoom ao passar o mouse */
+}
+
+header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.saldo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative; /* Necessário para o posicionamento absoluto do input */
+    width: 100%; /* Garante que o container ocupe toda a largura */
+    max-width: 350px; /* Limita o tamanho máximo do container, se necessário */
+    margin: 0 auto; /* Centraliza o container na página */
+}
+
+.saldo-btn {
+    position: relative; /* Contexto de posicionamento para o input */
+    width: 100%; /* Garante que o botão ocupe toda a largura do container */
+    height: 200px; /* Altura do botão */
+    border: none;
+    padding: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites do botão */
+}
+
+
+.saldo {
+    width: 100%; /* O container ocupa toda a largura */
+    height: 200px; /* Definindo uma altura fixa */
+    background-image: url('imagens/saldo-fundo.png'); /* A imagem de fundo */
+    background-size: cover; /* A imagem irá cobrir todo o container */
+    background-position: center; /* Centraliza a imagem */
+    color: white; /* Cor do texto */
+    display: flex; /* Usando flexbox para organizar os elementos */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Adiciona espaçamento ao redor do conteúdo */
+}
+
+.saldo h3 {
+    margin: 0;
+    font-size: 18px;
+    color: black;
+}
+
+.saldo input {
+    margin-top: 10px; /* Espaçamento entre a frase e o campo de entrada */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid white; /* Borda branca para o campo */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    color: white; /* Cor do texto */
+    width: 70%; /* Largura do campo de valor */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+
