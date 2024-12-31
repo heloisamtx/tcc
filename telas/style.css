@@ -509,4 +509,26 @@ header h2 {
     text-align: center; /* Alinha o texto ao centro */
 }
 
+.metas-container {
+    display: flex;
+    flex-direction: row; /* Define a direção como linha (horizontal) */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Alinha as imagens verticalmente */
+    gap: 20px; /* Espaçamento horizontal entre as imagens */
+}
+
+.meta-img {
+    width: 100px; /* Largura das imagens */
+    height: 100px; /* Altura das imagens */
+    border-radius: 10px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: transform 0.2s ease; /* Efeito suave ao interagir */
+}
+
+.meta-img:hover {
+    transform: scale(1.1); /* Zoom ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Adiciona sombra ao passar o mouse */
+}
+
+
 
