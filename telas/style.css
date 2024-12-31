@@ -509,26 +509,74 @@ header h2 {
     text-align: center; /* Alinha o texto ao centro */
 }
 
-.metas-container {
-    display: flex;
-    flex-direction: row; /* Define a direção como linha (horizontal) */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Alinha as imagens verticalmente */
-    gap: 20px; /* Espaçamento horizontal entre as imagens */
+.minhas-metas {
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+ /* Configura os botões para ficarem lado a lado */
+.botoes-metas {
+    display: flex; /* Coloca os elementos em linha */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+    margin-top: 20px;
 }
 
-.meta-img {
-    width: 100px; /* Largura das imagens */
-    height: 100px; /* Altura das imagens */
-    border-radius: 10px; /* Cantos arredondados */
-    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-    transition: transform 0.2s ease; /* Efeito suave ao interagir */
+/* Estiliza os links dentro dos botões */
+.botoes-metas a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: black; /* Define a cor do texto */
+    text-align: center; /* Centraliza o texto */
+    display: flex; /* Garante alinhamento correto */
+    flex-direction: column; /* Ícones e texto em coluna */
+    align-items: center;
 }
 
-.meta-img:hover {
-    transform: scale(1.1); /* Zoom ao passar o mouse */
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Adiciona sombra ao passar o mouse */
+/* Ajusta o tamanho e aparência das imagens */
+.botoes-metas img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Imagens redondas */
+    border: 2px solid#0056b3; /* Cor da borda */
+    padding: 10px;
+    transition: transform 0.2s ease;
 }
 
+.botoes-metas img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
 
+/* Ajusta o texto abaixo das imagens */
+.botoes-metas p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
 
+  section.minhas-metas .botoes-metas {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+    
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Adiciona rolagem quando necessário */
+    height: 100%; /* Garante que a altura do body ocupe toda a tela */
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    height: 60px;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .content {
+    padding: 20px;
+    min-height: 1500px; /* Apenas para demonstrar a rolagem */
+  }
+  
+  
