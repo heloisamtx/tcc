@@ -1,74 +1,118 @@
-/* Cabeçalho */
-header.cabecalho {
-    background-image: url('imagens/fundo-cabecalho.png'); /* Caminho correto para a imagem */
-    background-size: cover; /* A imagem cobre todo o cabeçalho */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    color: white; /* Garante contraste do texto sobre o fundo */
-    text-align: center;
-    padding: 20px;
+/* Reset de estilo */
+* {
+    margin: 0; /* Remove as margens padrões de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui o preenchimento e borda no cálculo da largura e altura */
 }
 
+body {
+    font-family: 'League Spartan', sans-serif; /* Define a fonte principal do site */
+    background-color: #f5e9cc; /* Cor de fundo do corpo */
+    color: #333; /* Cor do texto */
+    overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+/* Cabeçalho */
+header.cabecalho {
+    background-color: #3792ff; /* Cor de fundo do cabeçalho */
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno do cabeçalho */
+    position: relative; /* Permite o uso de posicionamento absoluto no conteúdo interno */
+}
+
+/* Título do cabeçalho */
 header .cabecalho-titulo {
-    margin: 0;
-    font-size: 36px;
-    font-family: 'League Spartan', sans-serif; /* Fonte estilizada */
+    font-size: 32px; /* Tamanho da fonte do título */
+    font-family: 'league spartan'; /* Define uma fonte personalizada para o título */
+}
+
+/* Botão de voltar como imagem */
+/* Botão de voltar como imagem */
+.btn-voltar {
+    position: absolute; /* Posiciona o botão de voltar de forma absoluta dentro do cabeçalho */
+    top: 20px; /* Distância do topo */
+    left: 20px; /* Distância da esquerda */
+    width: 45px; /* Aumenta a largura do botão */
+    height: 45px; /* Aumenta a altura do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: opacity 0.3s ease; /* Transição suave para mudança de opacidade */
+}
+
+
+.btn-voltar:hover {
+    opacity: 0.8; /* Efeito ao passar o mouse, torna o botão parcialmente transparente */
+}
+
+/* Conteúdo principal */
+.corpo {
+    display: flex; /* Usa o layout Flexbox */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    flex-direction: column; /* Alinha os itens na vertical */
+    padding: 20px; /* Espaçamento interno ao redor do conteúdo */
+}
+
+/* Página pautada */
+.pagina-pautada {
+    background-image: url('imagens/pagina-pautada.png'); /* Define a imagem de fundo da página */
+    background-size: cover; /* Faz com que a imagem cubra toda a área do elemento */
+    background-position: center; /* Centraliza a imagem de fundo */
+    width: 50%; /* Define a largura da página pautada para 50% da tela */
+    height: 120vh; /* Define a altura da página como 120% da altura da tela */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno ao redor do conteúdo */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave ao redor da página */
+    display: flex; /* Usa o layout Flexbox para o conteúdo dentro da página */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    overflow-y: scroll; /* Permite rolagem vertical caso o conteúdo ultrapasse a altura */
+    transform: scale(0.95); /* Aplica um leve zoom para reduzir o tamanho */
+    position: relative; /* Permite o uso de posicionamento absoluto dentro do conteúdo */
+
+}
+
+/* Texto fixo que não pode ser editado */
+.texto-fixo {
+    font-size: 20px; /* Tamanho da fonte do texto fixo */
+    font-family: league spartan;
+    line-height: 2.5; /* Espaçamento entre as linhas do texto */
+    color: #333; /* Cor do texto */
+    width: 90%; /* Largura do texto fixo */
+    margin-bottom: 20px; /* Espaço abaixo do texto fixo */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    padding: 10px; /* Espaçamento interno */
+    position: absolute; /* Posiciona o texto de forma absoluta dentro da página */
+    top: 20px; /* Distância do topo */
+    left: 50%; /* Centraliza o texto horizontalmente */
+    transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
+    pointer-events: none; /* Impede a interação com esse texto (não pode ser selecionado ou apagado) */
+}
+
+/* Área de conteúdo editável */
+.conteudo-editavel {
+    font-size: 18px; /* Tamanho da fonte do conteúdo editável */
+    font-family: league spartan;
+    line-height: 2.5; /* Espaçamento entre as linhas */
+    color: #333; /* Cor do texto */
+    width: 90%; /* Largura do conteúdo editável */
+    height: calc(100% - 40px); /* Ajusta a altura para o conteúdo editável, considerando o espaço do texto fixo */
+    background-color: transparent; /* Fundo transparente */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    overflow-y: auto; /* Permite rolagem vertical no conteúdo editável */
+    outline: none; /* Remove a borda de foco ao clicar */
+    border: 1px solid #ccc; /* Borda opcional */
+    margin-top: 40px; /* Espaço entre o texto fixo e o conteúdo editável */
 }
 
 /* Rodapé */
 footer.rodape {
-    background-image: url('imagens/fundo-rodape.png'); /* Caminho correto para a imagem */
-    background-size: cover; /* A imagem cobre todo o rodapé */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    padding: 20px;
-    text-align: center; /* Centraliza o texto no rodapé */
-}
-
-/* Estilo para as imagens do conteúdo principal */
-.metas-container {
-    display: flex;
-    justify-content: space-around; /* Espaça os itens igualmente */
-    margin: 20px 0;
-}
-
-.meta-botao img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Imagens circulares */
-    border: 2px solid #0056b3; /* Cor da borda */
-    transition: transform 0.2s ease; /* Transição suave ao passar o mouse */
-}
-
-.meta-botao img:hover {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-}
-
-/* Botão de voltar */
-.voltar-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.btn-voltar {
-    font-size: 16px;
-    background-color: #3792ff; /* Cor do botão */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none;
-    border-radius: 5px; /* Borda arredondada */
-    cursor: pointer;
-    text-decoration: none; /* Remove sublinhado */
-    transition: background 0.3s ease; /* Transição suave ao passar o mouse */
-}
-
-.btn-voltar:hover {
-    background-color: #43a047; /* Cor do botão ao passar o mouse */
-}
-.screen {
-    display: none;
-}
-
-.screen.active {
-    display: block;
+    background-color: #3792ff; /* Cor de fundo do rodapé */
+    color: white; /* Cor do texto no rodapé */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 20px; /* Espaçamento interno */
+    font-family: league spartan;
+    font-size: 25px; /* Tamanho da fonte do texto no rodapé */
 }

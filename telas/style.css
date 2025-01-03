@@ -57,24 +57,39 @@ html, body {
 /* Contêiner do logo */
 .logo-container {
     text-align: center; /* Centraliza o conteúdo dentro do contêiner */
-    margin-bottom: 20px; /* Adiciona um espaçamento inferior */
+    margin-bottom: 50px; /* Aumenta o espaçamento inferior para afastar mais a frase de cadastro */
+    margin-top: 20px; /* Move o contêiner um pouco mais para cima */
 }
 
 /* Estilo do texto do logo */
 .logo {
-    font-family: 'Adigiana Toybox', cursive; /* Usa a fonte personalizada definida */
-    font-size: 3em; /* Define o tamanho da fonte */
-    color: #FFFFFF; /* Define a cor do texto como branco */
-    text-shadow: 2px 2px #FFA500; /* Adiciona uma sombra ao texto com cor laranja */
-    margin-bottom: 20px; /* Adiciona um espaçamento inferior */
+    font-family: 'Adigiana Toybox', cursive;
+    font-size: 4em; /* Aumenta o tamanho da fonte */
+    color: #FFFFFF;
+    text-shadow: 2px 2px #FFA500;
+    margin-bottom: 20px; /* Ajusta a distância entre o logo e o conteúdo abaixo */
+    margin-top: -15px; /* Move o logo um pouco mais para cima */
 }
 
 /* Estilo da imagem do logo */
 .logo-imagem {
-    width: 150px; /* Define a largura máxima da imagem */
-    height: auto; /* Ajusta a altura proporcionalmente à largura */
+    width: 175px;
+    height: auto;
 }
 
+
+/* Exemplo de classe para a frase abaixo do cadastro */
+.frase-cadastro {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px; /* Ajuste da distância entre o cadastro e a frase */
+    font-family: league spartan;
+    font-size: 19px;
+}
+/* Estilo do h2 */
+h2 {
+    margin-bottom: 20px; /* Move o h2 um pouco mais para cima, ajustando conforme necessário */
+}
 
 /* Botões */
 .btn {
@@ -88,7 +103,6 @@ html, body {
     transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor do botão */
     margin-top: 20px; /* Adiciona um espaçamento superior */
 }
-
 .btn:hover {
     background-color: #E0A800; /* Altera a cor de fundo ao passar o mouse sobre o botão */
 }
@@ -96,6 +110,9 @@ html, body {
 .btn-enter {
     font-size: 1.5em; /* Define um tamanho maior de texto específico para botões de entrada */
     padding: 15px 30px; /* Adiciona mais espaçamento interno */
+    margin-top: 10px; /* Ajusta a distância do botão "Entrar" */
+    width: 130px;
+    height: auto;
 }
 
 /* Botão de voltar com imagem */
@@ -108,12 +125,15 @@ html, body {
     left: 15px; /* Define a posição do botão a partir da esquerda */
 }
 
+
+/* Estilo do botão de voltar com imagem */
 .btn-back-img {
-    width: 30px; /* Define a largura da imagem */
-    height: 30px; /* Define a altura da imagem */
+    width: 50px; /* Aumenta a largura da imagem */
+    height: 50px; /* Aumenta a altura da imagem */
     object-fit: contain; /* Mantém as proporções da imagem */
     transition: transform 0.2s ease; /* Adiciona uma transição suave na transformação */
 }
+
 
 .btn-back-img:hover {
     transform: scale(1.1); /* Aumenta ligeiramente a imagem ao passar o mouse */
@@ -123,7 +143,9 @@ html, body {
 .link-cadastro {
     color: black; /* Define a cor do texto do link */
     text-decoration: none; /* Remove o sublinhado padrão dos links */
-    margin-top: 10px; /* Adiciona espaçamento superior */
+    margin-top: 5px; /* Adiciona espaçamento superior */
+    font-family: league spartan;
+    font-size: 19px;
 }
 
 .link-cadastro:hover {

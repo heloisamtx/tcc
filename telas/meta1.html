@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 
 <head>
@@ -11,44 +11,35 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Estilo adicional -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="novo-style.css">
 </head>
 
 <body>
     <!-- Cabeçalho -->
-    <header class="cabecalho">
-        <div class="cabecalho-content">
-            <h1 class="cabecalho-titulo">Minhas Metas</h1>
-        </div>
-    </header>
+<header class="cabecalho">
+    <img src="imagens/voltar-icon.png" alt="Voltar" class="btn-voltar" onclick="window.history.back()">
+    <h1 class="cabecalho-titulo">PiggyBank</h1>
+</header>
 
     <!-- Conteúdo principal -->
-    <main class="corpo">
-        <div class="metas-container">
-            <a href="meta1.html" class="meta-botao">
-                <img src="imagens/meta-1.png" alt="Ícone Minhas Metas">
-                <p>Minhas metas</p>
-            </a>
-            <a href="meta2.html" class="meta-botao">
-                <img src="imagens/meta-2.png" alt="Ícone Meus Gastos">
-                <p>Meus gastos</p>
-            </a>
-            <a href="meta3.html" class="meta-botao">
-                <img src="imagens/meta-3.png" alt="Ícone Minhas Tarefas">
-                <p>Minhas tarefas</p>
-            </a>
+<main class="corpo">
+    <div class="pagina-pautada">
+        <!-- Texto fixo -->
+        <div class="texto-fixo">
+            Escreva suas metas aqui...
         </div>
-    </main>
+        
+        <!-- Conteúdo editável -->
+        <div class="conteudo-editavel" contenteditable="true">
+            <!-- O usuário pode escrever aqui -->
+        </div>
+    </div>
+</main>
 
     <!-- Rodapé -->
     <footer class="rodape">
-        <p>Gerencie suas metas com o PiggyBank!</p>
+        Gerencie sua mesada com o PiggyBank!
     </footer>
-
-    <!-- Botão de voltar -->
-    <div class="voltar-container">
-        <a href="index.html" class="btn-voltar">Voltar à Página Inicial</a>
-    </div>
 
     <!-- Script -->
     <script src="script.js"></script>
