@@ -9,9 +9,11 @@
 html, body {
     width: 100%; /* Ocupa toda a largura disponível */
     height: 100%; /* Ocupa toda a altura disponível */
-    overflow: hidden; /* Remove barras de rolagem desnecessárias */
+    margin: 0;
+    overflow-y: auto;
     font-family: 'League Spartan', sans-serif; /* Define a fonte padrão da página */
 }
+
 
 /* Configuração do fundo */
 #background {
@@ -135,7 +137,6 @@ form {
     align-items: center; /* Centraliza os itens horizontalmente */
     gap: 15px; /* Adiciona um espaçamento entre os itens */
     width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 400px; /* Define um limite máximo de largura */
 }
 
 form input {
@@ -190,9 +191,7 @@ main {
     flex-direction: column; /* Alinha os itens em uma coluna */
     gap: 20px; /* Adiciona espaçamento entre os itens */
     width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 600px; /* Define um limite máximo de largura */
 }
-
 /* Rodapé */
 footer {
     margin-top: auto; /* Empurra o rodapé para o final */
@@ -482,7 +481,6 @@ header h2 {
     align-items: center; /* Centraliza os itens verticalmente */
     justify-content: center; /* Centraliza os itens horizontalmente */
     cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
-    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do botão */
 }
 
 /* Estilo do container de saldo */
@@ -595,3 +593,12 @@ header {
     padding: 20px; /* Adiciona espaçamento interno ao conteúdo */
     min-height: 1500px; /* Define uma altura mínima para o conteúdo (usado para demonstrar rolagem) */
 }
+@media (min-width: 1008px) {
+    form {
+        max-width: 10000px; /* Maior largura em telas grandes */
+    }
+    #tela-dashboard {
+        max-width: 10000px;
+    }
+}
+
