@@ -1,0 +1,66 @@
+/* Cabeçalho */
+header.cabecalho {
+    background-image: url('imagens/fundo-cabecalho.png'); /* Defina o caminho correto para a imagem */
+    background-size: cover; /* A imagem cobre todo o cabeçalho */
+    background-position: center; /* Centraliza a imagem */
+    color: white; /* Garante que o texto fique visível sobre a imagem */
+    text-align: center;
+    padding: 20px;
+}
+
+header .cabecalho-titulo {
+    margin: 0;
+    font-size: 36px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* Rodapé */
+footer.rodape {
+    background-image: url('imagens/fundo-rodape.png'); /* Defina o caminho correto para a imagem */
+    background-size: cover; /* A imagem cobre todo o rodapé */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo para as imagens do conteúdo principal */
+.metas-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.meta-botao img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Imagens circulares */
+    border: 2px solid #0056b3;
+    transition: transform 0.2s ease;
+}
+
+.meta-botao img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Botão de voltar */
+.voltar-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-voltar {
+    font-size: 16px;
+    background-color: #3792ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #43a047;
+}

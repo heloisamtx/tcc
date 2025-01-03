@@ -1,351 +1,358 @@
- /* Reset geral */ 
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset geral para remover margens e paddings padrão de todos os elementos */
+* {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove espaçamentos internos padrão */
+    box-sizing: border-box; /* Inclui bordas e paddings no cálculo do tamanho total */
 }
 
-/* Garantir que HTML e body ocupem toda a tela */
+/* Garantir que o HTML e o body ocupem 100% da largura e altura da tela */
 html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Remove rolagem desnecessária */
-    font-family: 'League Spartan', sans-serif; /* Fonte padrão */
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 100%; /* Ocupa toda a altura disponível */
+    overflow: hidden; /* Remove barras de rolagem desnecessárias */
+    font-family: 'League Spartan', sans-serif; /* Define a fonte padrão da página */
 }
 
 /* Configuração do fundo */
 #background {
-    width: 100vw; /* Usa largura total da janela */
-    height: 100vh; /* Usa altura total da janela */
-    background-image: url('imagens/1.png'); /* Verifique o caminho correto da imagem */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw; /* Usa 100% da largura da janela de visualização */
+    height: 100vh; /* Usa 100% da altura da janela de visualização */
+    background-color: #ffde59;
+    display: flex; /* Usa Flexbox para alinhar os itens filhos */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
 }
 
-/* Contêiner principal */
+/* Contêiner principal que engloba o conteúdo */
 #app {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%; /* Ocupa 100% da largura disponível */
+    height: 100%; /* Ocupa 100% da altura disponível */
+    display: flex; /* Usa Flexbox para alinhar os itens filhos */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
 }
 
 /* Telas principais */
 .screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%; /* Garantir que não ultrapasse os limites */
-    max-width: 500px;
-    
-   
+    display: flex; /* Usa Flexbox para alinhar os itens filhos */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Adiciona espaçamento interno */
+    border-radius: 10px; /* Arredonda os cantos do contêiner */
+    width: 90%; /* Garante que o contêiner não ultrapasse 90% da largura disponível */
+    max-width: 500px; /* Define um limite máximo de largura */
 }
 
 /* Classe para esconder telas */
 .hidden {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
+    opacity: 0; /* Torna o elemento invisível */
+    pointer-events: none; /* Impede interações com o elemento */
+    position: absolute; /* Remove o elemento do fluxo normal da página */
 }
 
-/* Logo */
+/* Contêiner do logo */
 .logo-container {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
+    margin-bottom: 20px; /* Adiciona um espaçamento inferior */
 }
 
+/* Estilo do texto do logo */
 .logo {
-    font-family: 'Adigiana Toybox', cursive;
-    font-size: 3em;
-    color: #FFFFFF;
-    text-shadow: 2px 2px #FFA500;
-    margin-bottom: 20px;
+    font-family: 'Adigiana Toybox', cursive; /* Usa a fonte personalizada definida */
+    font-size: 3em; /* Define o tamanho da fonte */
+    color: #FFFFFF; /* Define a cor do texto como branco */
+    text-shadow: 2px 2px #FFA500; /* Adiciona uma sombra ao texto com cor laranja */
+    margin-bottom: 20px; /* Adiciona um espaçamento inferior */
 }
 
+/* Estilo da imagem do logo */
 .logo-imagem {
-    width: 150px;
-    height: auto;
+    width: 150px; /* Define a largura máxima da imagem */
+    height: auto; /* Ajusta a altura proporcionalmente à largura */
 }
+
 
 /* Botões */
 .btn {
-    background-color: #FFC000;
-    color: #333;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    background-color: #FFC000; /* Define a cor de fundo do botão */
+    color: #333; /* Define a cor do texto */
+    padding: 10px 20px; /* Adiciona espaçamento interno nos botões */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    font-size: 1.2em; /* Define o tamanho do texto */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar por cima */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor do botão */
+    margin-top: 20px; /* Adiciona um espaçamento superior */
 }
 
 .btn:hover {
-    background-color: #E0A800;
+    background-color: #E0A800; /* Altera a cor de fundo ao passar o mouse sobre o botão */
 }
 
 .btn-enter {
-    font-size: 1.5em;
-    padding: 15px 30px;
+    font-size: 1.5em; /* Define um tamanho maior de texto específico para botões de entrada */
+    padding: 15px 30px; /* Adiciona mais espaçamento interno */
 }
 
 /* Botão de voltar com imagem */
 .btn-back {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    left: 15px;
+    background: none; /* Remove o fundo padrão */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Mostra o cursor de "mão" */
+    position: absolute; /* Posiciona o botão de forma absoluta */
+    top: 15px; /* Define a posição do botão a partir do topo */
+    left: 15px; /* Define a posição do botão a partir da esquerda */
 }
 
 .btn-back-img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    transition: transform 0.2s ease;
+    width: 30px; /* Define a largura da imagem */
+    height: 30px; /* Define a altura da imagem */
+    object-fit: contain; /* Mantém as proporções da imagem */
+    transition: transform 0.2s ease; /* Adiciona uma transição suave na transformação */
 }
 
 .btn-back-img:hover {
-    transform: scale(1.1); /* Animação de hover */
+    transform: scale(1.1); /* Aumenta ligeiramente a imagem ao passar o mouse */
 }
 
 /* Links */
 .link-cadastro {
-    color: black;
-    text-decoration: none;
-    margin-top: 10px;
+    color: black; /* Define a cor do texto do link */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    margin-top: 10px; /* Adiciona espaçamento superior */
 }
 
 .link-cadastro:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o link */
 }
 
 /* Formulários */
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-    max-width: 400px;
+    display: flex; /* Usa Flexbox para alinhar os itens */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 15px; /* Adiciona um espaçamento entre os itens */
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 400px; /* Define um limite máximo de largura */
 }
 
 form input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    width: 100%; /* Ocupa toda a largura do formulário */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border: 1px solid #ccc; /* Define a borda do campo */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    font-size: 1rem; /* Define o tamanho do texto */
 }
 
 form input:focus {
-    border-color: #FFA500;
-    outline: none;
-    box-shadow: 0 0 5px #FFA500;
+    border-color: #FFA500; /* Altera a cor da borda ao focar no campo */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px #FFA500; /* Adiciona um brilho ao redor do campo */
 }
 
 form button {
-    background-color: #FFC000;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #FFC000; /* Define a cor de fundo do botão */
+    color: #333; /* Define a cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    cursor: pointer; /* Mostra o cursor de "mão" */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor do botão */
 }
 
 form button:hover {
-    background-color: #F8CF47;
+    background-color: #F8CF47; /* Altera a cor de fundo ao passar o mouse sobre o botão */
 }
+
+/* Tela do dashboard */
 #tela-dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 600px;
-}
-
-footer {
-    margin-top: auto;
-    text-align: center;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
-}
-/* Estilo geral do Dashboard */
-#tela-dashboard {
-    display: none; /* Oculta a tela até ser exibida */
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-#tela-dashboard:not(.hidden) {
-    display: block; /* Exibe a tela quando a classe "hidden" é removida */
+    display: flex; /* Usa Flexbox para alinhar os itens */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Adiciona espaçamento interno */
 }
 
 /* Cabeçalho */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e6e6e6;
-    padding-bottom: 10px;
+    display: flex; /* Usa Flexbox para alinhar os itens */
+    justify-content: space-between; /* Espaça os itens ao máximo possível */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    width: 100%; /* Ocupa toda a largura disponível */
 }
 
-header h2 {
-    font-size: 20px;
-    color: #333;
-    margin: 0;
-}
-
-header .btn-back {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-header .btn-back img {
-    width: 24px;
-    height: 24px;
-}
-
-/* Conteúdo principal */
+/* Área principal */
 main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-main section {
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-main section h3 {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-main section div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-main section div p {
-    margin: 0;
-    font-size: 16px;
-    color: #333;
-}
-
-main section div button {
-    background: #ff6f61;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s;
-    width: 100%;
-}
-
-main section div button:hover {
-    background: #ff5a4b;
+    flex-grow: 1; /* Faz o conteúdo principal crescer para ocupar o espaço disponível */
+    display: flex; /* Usa Flexbox para alinhar os itens */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 600px; /* Define um limite máximo de largura */
 }
 
 /* Rodapé */
 footer {
-    text-align: center;
-    margin-top: 20px;
+    margin-top: auto; /* Empurra o rodapé para o final */
+    text-align: center; /* Centraliza o texto */
+    background-color: #f0f0f0; /* Define a cor de fundo */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
 }
 
-footer p {
-    font-size: 20px;
-    font-family: league spartan;
-    color: white;
-    margin-bottom: 10px;
+/* Estilo geral do Dashboard */
+#tela-dashboard {
+    display: none; /* Oculta a tela do dashboard por padrão */
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 400px; /* Define um limite máximo de largura */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    background: #fff; /* Define a cor de fundo como branco */
+    border-radius: 12px; /* Adiciona bordas arredondadas */
+    padding: 20px; /* Adiciona espaçamento interno */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave para destacar o contêiner */
 }
 
-footer button {
-    font-size: 14px;
-    background: #3792ff;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background 0.3s;
+#tela-dashboard:not(.hidden) {
+    display: block; /* Exibe a tela quando a classe "hidden" não está presente */
 }
 
-footer button:hover {
-    background: #43a047;
-}
+/* Cabeçalho */
 header {
-    background-image: url('imagens/fundo-cabecalho.png'); /* Substitua o caminho da imagem conforme necessário */
-    background-size: cover; /* Faz com que a imagem ocupe toda a área do cabeçalho */
-    background-position: center; /* Centraliza a imagem no cabeçalho */
-    height: 200px; /* Ajuste a altura conforme necessário */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    color: white; /* Garante que o texto seja visível sobre a imagem */
+    display: flex; /* Usa Flexbox para alinhar os itens */
+    justify-content: space-between; /* Espaça os itens ao máximo */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    margin-bottom: 20px; /* Adiciona espaçamento inferior */
+    border-bottom: 1px solid #e6e6e6; /* Adiciona uma borda inferior para separar o cabeçalho */
+    padding-bottom: 10px; /* Adiciona espaçamento na parte inferior */
 }
 
 header h2 {
-    margin: 0;
+    font-size: 20px; /* Define o tamanho da fonte para o título */
+    color: #333; /* Define a cor do texto */
+    margin: 0; /* Remove qualquer margem padrão */
+}
+
+header .btn-back {
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove a borda padrão do botão */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
+}
+
+header .btn-back img {
+    width: 24px; /* Define a largura da imagem do botão de voltar */
+    height: 24px; /* Define a altura da imagem */
+}
+
+/* Conteúdo principal */
+main {
+    display: flex; /* Utiliza Flexbox para estruturar o layout principal */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    gap: 20px; /* Define o espaçamento entre os elementos */
+}
+
+main section {
+    background: #f9f9f9; /* Define a cor de fundo das seções */
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+    padding: 15px; /* Adiciona espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Adiciona uma sombra suave para destacar */
+}
+
+main section h3 {
+    font-size: 18px; /* Define o tamanho da fonte do título */
+    color: #555; /* Define a cor do texto do título */
+    margin-bottom: 10px; /* Adiciona espaçamento inferior */
+}
+
+main section div {
+    display: flex; /* Flexbox para alinhar os elementos */
+    flex-direction: column; /* Alinha os elementos em coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    gap: 10px; /* Define o espaçamento entre os itens */
+}
+
+main section div p {
+    margin: 0; /* Remove as margens padrão */
+    font-size: 16px; /* Define o tamanho da fonte do texto */
+    color: #333; /* Define a cor do texto */
+}
+
+main section div button {
+    background: #ff6f61; /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 6px; /* Adiciona bordas arredondadas */
+    padding: 10px 15px; /* Adiciona espaçamento interno */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
+    font-size: 14px; /* Define o tamanho da fonte */
+    transition: background 0.3s; /* Adiciona transição suave ao hover */
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
+}
+
+main section div button:hover {
+    background: #ff5a4b; /* Altera a cor do fundo ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Adiciona espaçamento superior */
+}
+
+footer p {
+    font-size: 20px; /* Define o tamanho da fonte do texto */
+    font-family: league spartan; /* Define a fonte do texto */
+    color: white; /* Define a cor do texto */
+    margin-bottom: 10px; /* Adiciona espaçamento inferior */
+}
+
+footer button {
+    font-size: 14px; /* Define o tamanho da fonte do botão */
+    background: #3792ff; /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 6px; /* Adiciona bordas arredondadas */
+    padding: 10px 15px; /* Adiciona espaçamento interno */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
+    transition: background 0.3s; /* Adiciona uma transição suave ao hover */
+}
+
+footer button:hover {
+    background: #43a047; /* Altera a cor de fundo ao passar o mouse */
+}
+
+/* Cabeçalho */
+header {
+    background-image: url('imagens/fundo-cabecalho.png'); /* Define uma imagem de fundo para o cabeçalho */
+    background-size: cover; /* Faz com que a imagem ocupe toda a área do cabeçalho */
+    background-position: center; /* Centraliza a imagem no cabeçalho */
+    height: 200px; /* Define a altura do cabeçalho */
+    display: flex; /* Usa Flexbox para alinhar os itens */
+    justify-content: space-between; /* Espaça os itens ao máximo */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding: 0 20px; /* Adiciona espaçamento lateral */
+    color: white; /* Define a cor do texto para ser visível sobre o fundo */
+}
+
+header h2 {
+    margin: 0; /* Remove as margens padrão do título */
 }
 
 header .btn-logout {
-    background-color: #ff5733; /* Cor do botão de logout */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    color: white;
-    font-size: 14px;
-    border-radius: 5px;
+    background-color: #ff5733; /* Define a cor de fundo do botão de logout */
+    border: none; /* Remove a borda padrão */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
+    color: white; /* Define a cor do texto */
+    font-size: 14px; /* Define o tamanho da fonte */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
 }
 
 header .btn-logout:hover {
-    background-color: #c0392b; /* Cor do botão ao passar o mouse */
+    background-color: #c0392b; /* Altera a cor do botão ao passar o mouse */
 }
+
 /* Estilo do botão */
 .btn {
     
@@ -390,193 +397,201 @@ header .btn-logout:hover {
 }
 /* Estilo do rodapé */
 footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background-image: url('imagens/rodape.png'); /* Substitua pelo caminho da imagem */
-    background-size: cover; /* Faz com que a imagem ocupe toda a área do rodapé */
-    background-position: center; /* Centraliza a imagem */
+    text-align: center; /* Centraliza todo o conteúdo do rodapé */
+    margin-top: 20px; /* Adiciona espaçamento superior */
+    padding: 20px; /* Adiciona espaçamento interno */
+    background-image: url('imagens/rodape.png'); /* Define a imagem de fundo do rodapé */
+    background-size: cover; /* Faz com que a imagem cubra toda a área do rodapé */
+    background-position: center; /* Centraliza a imagem no rodapé */
     background-repeat: no-repeat; /* Impede que a imagem se repita */
-    border-radius: 10px;
+    border-radius: 10px; /* Adiciona bordas arredondadas ao rodapé */
 }
 
 footer p {
-    font-size: 20px;
-    font-family: 'League Spartan', sans-serif;
-    color: white;
-    margin-bottom: 10px;
+    font-size: 20px; /* Define o tamanho do texto */
+    font-family: 'League Spartan', sans-serif; /* Define a fonte do texto */
+    color: white; /* Define a cor do texto */
+    margin-bottom: 10px; /* Adiciona espaçamento inferior */
 }
 
 footer button {
-    font-size: 14px;
-    background: #3792ff;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-size: 14px; /* Define o tamanho da fonte do botão */
+    background: #3792ff; /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+    border: none; /* Remove as bordas padrão */
+    border-radius: 6px; /* Adiciona bordas arredondadas */
+    padding: 10px 15px; /* Adiciona espaçamento interno */
+    cursor: pointer; /* Muda o cursor para uma "mão" ao passar o mouse */
+    transition: background 0.3s; /* Adiciona uma transição suave ao hover */
 }
 
 footer button:hover {
-    background: #43a047;
+    background: #fbfdfb; /* Altera a cor de fundo ao passar o mouse */
 }
 
-
+/* Estilo do cabeçalho */
 header {
-    display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
-    padding: 0 20px; /* Espaçamento interno */
-    background-image: url('imagens/fundo-cabecalho.png');
-    background-size: cover;
-    background-position: center;
-    height: 200px;
-    color: white;
-    gap: 5px; /* Reduzido o espaçamento entre os elementos */
+    display: flex; /* Usa Flexbox para organizar os elementos */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding: 0 20px; /* Adiciona espaçamento lateral interno */
+    background-image: url('imagens/fundo-cabecalho.png'); /* Define a imagem de fundo do cabeçalho */
+    background-size: cover; /* Faz com que a imagem ocupe toda a área do cabeçalho */
+    background-position: center; /* Centraliza a imagem no cabeçalho */
+    height: 200px; /* Define a altura do cabeçalho */
+    color: white; /* Define a cor do texto */
+    gap: 5px; /* Adiciona espaçamento entre os elementos */
 }
 
 header .logout-icon {
-    width: 35px; /* Largura da imagem (reduzido para diminuir o espaço) */
-    height: 35px; /* Altura da imagem (reduzido para diminuir o espaço) */
-    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-    transition: transform 0.2s ease; /* Transição suave ao interagir */
+    width: 35px; /* Define a largura do ícone de logout */
+    height: 35px; /* Define a altura do ícone de logout */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
+    transition: transform 0.2s ease; /* Adiciona uma transição suave ao interagir */
 }
 
 header .logout-icon:hover {
-    transform: scale(1.1); /* Animação de zoom ao passar o mouse */
+    transform: scale(1.1); /* Amplia o ícone ao passar o mouse */
 }
 
 header h2 {
-    margin: 0;
-    font-size: 20px;
+    margin: 0; /* Remove a margem padrão do título */
+    font-size: 20px; /* Define o tamanho da fonte do título */
 }
 
+/* Estilo do container de saldo */
 .saldo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    position: relative; /* Necessário para o posicionamento absoluto do input */
-    width: 100%; /* Garante que o container ocupe toda a largura */
-    max-width: 350px; /* Limita o tamanho máximo do container, se necessário */
+    display: flex; /* Usa Flexbox para organizar os elementos */
+    flex-direction: column; /* Alinha os elementos em uma coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    gap: 10px; /* Adiciona espaçamento entre os itens */
+    position: relative; /* Define o contexto de posicionamento para elementos filhos */
+    width: 100%; /* Faz o container ocupar toda a largura disponível */
+    max-width: 350px; /* Define uma largura máxima para o container */
     margin: 0 auto; /* Centraliza o container na página */
 }
 
+/* Estilo do botão de saldo */
 .saldo-btn {
-    position: relative; /* Contexto de posicionamento para o input */
-    width: 100%; /* Garante que o botão ocupe toda a largura do container */
-    height: 200px; /* Altura do botão */
-    border: none;
-    padding: 0;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites do botão */
+    position: relative; /* Define o contexto de posicionamento para elementos filhos */
+    width: 100%; /* Faz o botão ocupar toda a largura do container */
+    height: 200px; /* Define a altura do botão */
+    border: none; /* Remove as bordas padrão */
+    padding: 0; /* Remove o espaçamento interno */
+    background: transparent; /* Torna o fundo do botão transparente */
+    display: flex; /* Usa Flexbox para organizar os elementos */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do botão */
 }
 
-
+/* Estilo do container de saldo */
 .saldo {
-    width: 100%; /* O container ocupa toda a largura */
-    height: 200px; /* Definindo uma altura fixa */
-    background-image: url('imagens/saldo-fundo.png'); /* A imagem de fundo */
-    background-size: cover; /* A imagem irá cobrir todo o container */
-    background-position: center; /* Centraliza a imagem */
-    color: white; /* Cor do texto */
-    display: flex; /* Usando flexbox para organizar os elementos */
+    width: 100%; /* O container ocupa toda a largura disponível */
+    height: 200px; /* Define uma altura fixa de 200px para o container */
+    background-image: url('imagens/saldo-fundo.png'); /* Define a imagem de fundo */
+    background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do container */
+    background-position: center; /* Centraliza a imagem de fundo */
+    color: white; /* Define a cor do texto como branco */
+    display: flex; /* Usa Flexbox para organizar os elementos dentro do container */
     flex-direction: column; /* Organiza os elementos verticalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    text-align: center; /* Centraliza o texto */
-    padding: 10px; /* Adiciona espaçamento ao redor do conteúdo */
+    justify-content: center; /* Centraliza os itens verticalmente dentro do container */
+    align-items: center; /* Centraliza os itens horizontalmente dentro do container */
+    text-align: center; /* Centraliza o texto dentro do container */
+    padding: 10px; /* Adiciona espaçamento interno ao redor do conteúdo */
 }
 
+/* Estilo para o título dentro do container de saldo */
 .saldo h3 {
-    margin: 0;
-    font-size: 18px;
-    color: black;
+    margin: 0; /* Remove qualquer margem padrão do título */
+    font-size: 18px; /* Define o tamanho da fonte do título */
+    color: black; /* Define a cor do título como preto */
 }
 
+/* Estilo para o campo de entrada de valor dentro do container de saldo */
 .saldo input {
-    margin-top: 10px; /* Espaçamento entre a frase e o campo de entrada */
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid white; /* Borda branca para o campo */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-    color: white; /* Cor do texto */
-    width: 70%; /* Largura do campo de valor */
-    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 10px; /* Adiciona um espaçamento superior entre o título e o campo de entrada */
+    padding: 10px; /* Adiciona espaçamento interno ao campo de entrada */
+    font-size: 16px; /* Define o tamanho da fonte do campo de entrada */
+    border: 2px solid white; /* Define uma borda branca para o campo de entrada */
+    background-color: rgba(0, 0, 0, 0.5); /* Define um fundo semi-transparente para o campo */
+    color: white; /* Define a cor do texto dentro do campo como branco */
+    width: 70%; /* Define a largura do campo de entrada como 70% do container */
+    text-align: center; /* Alinha o texto dentro do campo de entrada ao centro */
 }
 
+/* Estilo para a seção de metas */
 .minhas-metas {
-    text-align: center;
-    margin: 20px auto;
-  }
-  
- /* Configura os botões para ficarem lado a lado */
+    text-align: center; /* Centraliza o texto dentro da seção */
+    margin: 20px auto; /* Adiciona margem de 20px nas laterais e margem automática para centralizar */
+}
+
+/* Estilo para os botões de metas, organizados lado a lado */
 .botoes-metas {
-    display: flex; /* Coloca os elementos em linha */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 20px; /* Adiciona espaçamento entre os itens */
-    margin-top: 20px;
+    display: flex; /* Organiza os itens lado a lado (em linha) */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Adiciona um espaçamento de 20px entre os itens */
+    margin-top: 20px; /* Adiciona margem superior */
 }
 
-/* Estiliza os links dentro dos botões */
+/* Estilo para os links dentro dos botões de metas */
 .botoes-metas a {
-    text-decoration: none; /* Remove o sublinhado */
-    color: black; /* Define a cor do texto */
-    text-align: center; /* Centraliza o texto */
-    display: flex; /* Garante alinhamento correto */
-    flex-direction: column; /* Ícones e texto em coluna */
-    align-items: center;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: black; /* Define a cor do texto dos links como preto */
+    text-align: center; /* Centraliza o texto dentro do link */
+    display: flex; /* Garante que os itens dentro do link sejam organizados em uma linha */
+    flex-direction: column; /* Organiza o conteúdo do link em coluna (ícone e texto) */
+    align-items: center; /* Alinha os itens ao centro */
 }
 
-/* Ajusta o tamanho e aparência das imagens */
+/* Estilo para as imagens dentro dos botões de metas */
 .botoes-metas img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Imagens redondas */
-    border: 2px solid#0056b3; /* Cor da borda */
-    padding: 10px;
-    transition: transform 0.2s ease;
+    width: 100px; /* Define a largura da imagem como 100px */
+    height: 100px; /* Define a altura da imagem como 100px */
+    border-radius: 50%; /* Torna a imagem redonda */
+    border: 2px solid#f5f7f9; /* Define a cor da borda como azul */
+    padding: 10px; /* Adiciona um preenchimento de 10px ao redor da imagem */
+    transition: transform 0.2s ease; /* Adiciona uma transição suave ao aplicar o efeito de hover */
 }
 
+/* Efeito de hover para as imagens dos botões de metas */
 .botoes-metas img:hover {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.1); /* Amplia a imagem ao passar o mouse sobre ela */
 }
 
-/* Ajusta o texto abaixo das imagens */
+/* Estilo para o texto abaixo das imagens dos botões de metas */
 .botoes-metas p {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #333;
+    margin-top: 10px; /* Adiciona margem superior ao texto */
+    font-weight: bold; /* Define o texto como negrito */
+    color: #333; /* Define a cor do texto como cinza escuro */
 }
 
-  section.minhas-metas .botoes-metas {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 20px !important;
-  }
-    
-  body {
-    margin: 0;
-    padding: 0;
-    overflow-y: auto; /* Adiciona rolagem quando necessário */
-    height: 100%; /* Garante que a altura do body ocupe toda a tela */
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    height: 60px;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  .content {
-    padding: 20px;
-    min-height: 1500px; /* Apenas para demonstrar a rolagem */
-  }
-  
-  
+/* Força o layout dos botões de metas a ser flexível e centralizado dentro de uma seção específica */
+section.minhas-metas .botoes-metas {
+    display: flex !important; /* Força o layout flexbox a ser aplicado */
+    justify-content: center !important; /* Centraliza os botões horizontalmente */
+    gap: 20px !important; /* Adiciona espaçamento entre os botões */
+}
+
+/* Estilo geral para o corpo da página */
+body {
+    margin: 0; /* Remove a margem padrão do corpo */
+    padding: 0; /* Remove o preenchimento padrão do corpo */
+    overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
+    height: 100%; /* Garante que o corpo ocupe toda a altura da tela */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #333; /* Define a cor de fundo do cabeçalho como cinza escuro */
+    color: white; /* Define a cor do texto como branco */
+    height: 60px; /* Define a altura do cabeçalho */
+    text-align: center; /* Centraliza o texto dentro do cabeçalho */
+    padding: 15px; /* Adiciona espaçamento interno ao cabeçalho */
+}
+
+/* Estilo do conteúdo principal */
+.content {
+    padding: 20px; /* Adiciona espaçamento interno ao conteúdo */
+    min-height: 1500px; /* Define uma altura mínima para o conteúdo (usado para demonstrar rolagem) */
+}
