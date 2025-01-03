@@ -1,7 +1,10 @@
 // Função para alternar entre telas
 function showScreen(screenId) {
     document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden')); // Esconde todas as telas
-    document.getElementById(screenId).classList.remove('hidden'); // Exibe a tela específica
+    const screen = document.getElementById(screenId);
+    if (screen) {
+        screen.classList.remove('hidden'); // Exibe a tela específica
+    }
 }
 
 // Função principal para inicializar os eventos
@@ -50,29 +53,35 @@ function initializeScreenNavigation() {
 }
 
 // Evento de submissão do formulário de login
-document.getElementById('login-form').addEventListener('submit', (e) => {
-    e.preventDefault();
+const loginForm = document.getElementById('login-form');
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
 
-    // Simulação de login (substituir por integração com backend)
-    if (email === 'teste@teste.com' && password === '123456') {
-        const nomeUsuario = email.split('@')[0]; // Extrai o nome do usuário do e-mail
-        mostrarDashboard(nomeUsuario);
-    } else {
-        alert('Email ou senha incorretos.');
-    }
-});
+        // Simulação de login (substituir por integração com backend)
+        if (email === 'teste@teste.com' && password === '123456') {
+            const nomeUsuario = email.split('@')[0]; // Extrai o nome do usuário do e-mail
+            mostrarDashboard(nomeUsuario);
+        } else {
+            alert('Email ou senha incorretos.');
+        }
+    });
+}
 
 // Evento de submissão do formulário de cadastro
-document.getElementById('cadastro-form').addEventListener('submit', (e) => {
-    e.preventDefault();
+const cadastroForm = document.getElementById('cadastro-form');
+if (cadastroForm) {
+    cadastroForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    const nome = document.getElementById('cadastro-nome').value;
-    alert(`Conta criada com sucesso para ${nome}!`);
-    showScreen('tela-dashboard'); // Exibe o dashboard após o cadastro
-});
+        const nome = document.getElementById('cadastro-nome').value;
+        alert(`Conta criada com sucesso para ${nome}!`);
+        showScreen('tela-dashboard'); // Exibe o dashboard após o cadastro
+    });
+}
 
 // Função para mostrar o dashboard com o nome do usuário
 function mostrarDashboard(nomeUsuario) {
@@ -80,7 +89,10 @@ function mostrarDashboard(nomeUsuario) {
     document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
 
     // Exibe a tela do dashboard
-    document.getElementById('tela-dashboard').classList.remove('hidden');
+    const dashboard = document.getElementById('tela-dashboard');
+    if (dashboard) {
+        dashboard.classList.remove('hidden');
+    }
 
     // Define o nome do usuário na tela do dashboard
     const nomeElemento = document.getElementById('nome-usuario');
@@ -106,24 +118,32 @@ function compartilharLink() {
 
 // Inicializa a navegação entre telas ao carregar a página
 document.addEventListener('DOMContentLoaded', initializeScreenNavigation);
-// Seleciona os elementos
+
+// Seleciona os elementos do saldo
 const saldoBtn = document.querySelector('.saldo-btn');
 const saldoInput = document.getElementById('saldo-input');
 const valorSaldo = document.getElementById('valor-saldo');
 
-// Evento para mostrar o campo de entrada ao clicar na imagem
-saldoBtn.addEventListener('click', () => {
-    saldoInput.classList.toggle('visible'); // Alterna a visibilidade do input
-    saldoInput.focus(); // Foca no campo de entrada
-});
+// Verifica se os elementos do saldo existem antes de adicionar eventos
+if (saldoBtn && saldoInput && valorSaldo) {
+    // Evento para mostrar o campo de entrada ao clicar na imagem
+    saldoBtn.addEventListener('click', () => {
+        saldoInput.classList.toggle('visible'); // Alterna a visibilidade do input
+        saldoInput.focus(); // Foca no campo de entrada
+    });
 
-// Evento para atualizar o saldo quando o valor for alterado
-saldoInput.addEventListener('input', (e) => {
-    const value = e.target.value;
-    valorSaldo.textContent = `R$ ${parseFloat(value).toFixed(2)}`; // Atualiza o texto do saldo
-});
+    // Evento para atualizar o saldo quando o valor for alterado
+    saldoInput.addEventListener('input', (e) => {
+        const value = parseFloat(e.target.value);
+        if (!isNaN(value)) {
+            valorSaldo.textContent = `R$ ${value.toFixed(2)}`; // Atualiza o texto do saldo
+        } else {
+            valorSaldo.textContent = 'R$ 0.00'; // Valor padrão
+        }
+    });
 
-// Fecha o campo de entrada quando o valor for confirmado (ao pressionar Enter)
-saldoInput.addEventListener('blur', () => {
-    saldoInput.classList.remove('visible'); // Esconde o campo de entrada
-});
+    // Fecha o campo de entrada quando o valor for confirmado (ao perder o foco)
+    saldoInput.addEventListener('blur', () => {
+        saldoInput.classList.remove('visible'); // Esconde o campo de entrada
+    });
+}

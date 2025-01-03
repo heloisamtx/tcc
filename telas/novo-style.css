@@ -1,9 +1,10 @@
 /* Cabeçalho */
 header.cabecalho {
-    background-image: url('imagens/fundo-cabecalho.png'); /* Defina o caminho correto para a imagem */
+    background-image: url('imagens/fundo-cabecalho.png'); /* Caminho correto para a imagem */
     background-size: cover; /* A imagem cobre todo o cabeçalho */
     background-position: center; /* Centraliza a imagem */
-    color: white; /* Garante que o texto fique visível sobre a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    color: white; /* Garante contraste do texto sobre o fundo */
     text-align: center;
     padding: 20px;
 }
@@ -11,23 +12,23 @@ header.cabecalho {
 header .cabecalho-titulo {
     margin: 0;
     font-size: 36px;
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'League Spartan', sans-serif; /* Fonte estilizada */
 }
 
 /* Rodapé */
 footer.rodape {
-    background-image: url('imagens/fundo-rodape.png'); /* Defina o caminho correto para a imagem */
+    background-image: url('imagens/fundo-rodape.png'); /* Caminho correto para a imagem */
     background-size: cover; /* A imagem cobre todo o rodapé */
     background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Centraliza o texto no rodapé */
 }
 
 /* Estilo para as imagens do conteúdo principal */
 .metas-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Espaça os itens igualmente */
     margin: 20px 0;
 }
 
@@ -35,8 +36,8 @@ footer.rodape {
     width: 100px;
     height: 100px;
     border-radius: 50%; /* Imagens circulares */
-    border: 2px solid #0056b3;
-    transition: transform 0.2s ease;
+    border: 2px solid #0056b3; /* Cor da borda */
+    transition: transform 0.2s ease; /* Transição suave ao passar o mouse */
 }
 
 .meta-botao img:hover {
@@ -51,16 +52,23 @@ footer.rodape {
 
 .btn-voltar {
     font-size: 16px;
-    background-color: #3792ff;
-    color: white;
-    padding: 10px 20px;
+    background-color: #3792ff; /* Cor do botão */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
     border: none;
-    border-radius: 5px;
+    border-radius: 5px; /* Borda arredondada */
     cursor: pointer;
-    text-decoration: none;
-    transition: background 0.3s;
+    text-decoration: none; /* Remove sublinhado */
+    transition: background 0.3s ease; /* Transição suave ao passar o mouse */
 }
 
 .btn-voltar:hover {
-    background-color: #43a047;
+    background-color: #43a047; /* Cor do botão ao passar o mouse */
+}
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
 }
