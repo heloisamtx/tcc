@@ -85,10 +85,15 @@ html, body {
     margin-top: 20px; /* Ajuste da distância entre o cadastro e a frase */
     font-family: league spartan;
     font-size: 19px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
 }
 /* Estilo do h2 */
 h2 {
     margin-bottom: 20px; /* Move o h2 um pouco mais para cima, ajustando conforme necessário */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+font-family: league spartan;
+font-size: 30px;
 }
 
 /* Botões */
@@ -126,14 +131,12 @@ h2 {
 }
 
 
-/* Estilo do botão de voltar com imagem */
 .btn-back-img {
-    width: 50px; /* Aumenta a largura da imagem */
-    height: 50px; /* Aumenta a altura da imagem */
+    width: 35px; /* Define a largura da imagem */
+    height: 35px; /* Define a altura da imagem */
     object-fit: contain; /* Mantém as proporções da imagem */
     transition: transform 0.2s ease; /* Adiciona uma transição suave na transformação */
 }
-
 
 .btn-back-img:hover {
     transform: scale(1.1); /* Aumenta ligeiramente a imagem ao passar o mouse */
@@ -146,6 +149,7 @@ h2 {
     margin-top: 5px; /* Adiciona espaçamento superior */
     font-family: league spartan;
     font-size: 19px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .link-cadastro:hover {
@@ -487,8 +491,10 @@ header h2 {
     gap: 10px; /* Adiciona espaçamento entre os itens */
     position: relative; /* Define o contexto de posicionamento para elementos filhos */
     width: 100%; /* Faz o container ocupar toda a largura disponível */
-    max-width: 350px; /* Define uma largura máxima para o container */
-    margin: 0 auto; /* Centraliza o container na página */
+    max-width: 300px; /* Define uma largura máxima para o container */
+    margin: 20px auto; /* Adiciona margem superior e centraliza na página */
+    padding: 10px; /* Ajusta o espaçamento interno */
+    padding-top: 20px; /* Adiciona espaço extra para afastar do cabeçalho */
 }
 
 /* Estilo do botão de saldo */
@@ -508,7 +514,7 @@ header h2 {
 /* Estilo do container de saldo */
 .saldo {
     width: 100%; /* O container ocupa toda a largura disponível */
-    height: 200px; /* Define uma altura fixa de 200px para o container */
+    height: 180px; /* Define uma altura fixa de 200px para o container */
     background-image: url('imagens/saldo-fundo.png'); /* Define a imagem de fundo */
     background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do container */
     background-position: center; /* Centraliza a imagem de fundo */
@@ -518,7 +524,8 @@ header h2 {
     justify-content: center; /* Centraliza os itens verticalmente dentro do container */
     align-items: center; /* Centraliza os itens horizontalmente dentro do container */
     text-align: center; /* Centraliza o texto dentro do container */
-    padding: 10px; /* Adiciona espaçamento interno ao redor do conteúdo */
+    padding: 8px; /* Adiciona espaçamento interno ao redor do conteúdo */
+    border-radius: 10px; /* Arredonda os cantos */
 }
 
 /* Estilo para o título dentro do container de saldo */
@@ -526,12 +533,13 @@ header h2 {
     margin: 0; /* Remove qualquer margem padrão do título */
     font-size: 18px; /* Define o tamanho da fonte do título */
     color: black; /* Define a cor do título como preto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo para o campo de entrada de valor dentro do container de saldo */
 .saldo input {
     margin-top: 10px; /* Adiciona um espaçamento superior entre o título e o campo de entrada */
-    padding: 10px; /* Adiciona espaçamento interno ao campo de entrada */
+    padding: 8px; /* Adiciona espaçamento interno ao campo de entrada */
     font-size: 16px; /* Define o tamanho da fonte do campo de entrada */
     border: 2px solid white; /* Define uma borda branca para o campo de entrada */
     background-color: rgba(0, 0, 0, 0.5); /* Define um fundo semi-transparente para o campo */
@@ -545,46 +553,47 @@ header h2 {
     text-align: center; /* Centraliza o texto dentro da seção */
     margin: 20px auto; /* Adiciona margem de 20px nas laterais e margem automática para centralizar */
 }
-
-/* Estilo para os botões de metas, organizados lado a lado */
+/* Estilo para os botões de metas (layout horizontal) */
 .botoes-metas {
-    display: flex; /* Organiza os itens lado a lado (em linha) */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    gap: 20px; /* Adiciona um espaçamento de 20px entre os itens */
-    margin-top: 20px; /* Adiciona margem superior */
+    display: flex; /* Organiza os botões em linha (horizontal) */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 20px; /* Espaçamento horizontal entre os botões */
+    margin-top: 20px; /* Espaçamento superior */
+    flex-wrap: wrap; /* Permite quebra de linha se o espaço for insuficiente */
 }
 
-/* Estilo para os links dentro dos botões de metas */
+/* Estilo para cada botão de meta */
 .botoes-metas a {
-    text-decoration: none; /* Remove o sublinhado dos links */
-    color: black; /* Define a cor do texto dos links como preto */
-    text-align: center; /* Centraliza o texto dentro do link */
-    display: flex; /* Garante que os itens dentro do link sejam organizados em uma linha */
-    flex-direction: column; /* Organiza o conteúdo do link em coluna (ícone e texto) */
-    align-items: center; /* Alinha os itens ao centro */
+    text-decoration: none; /* Remove sublinhado do texto */
+    color: black; /* Texto preto */
+    text-align: center; /* Texto centralizado */
+    display: flex; /* Alinha ícone e texto verticalmente */
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    align-items: center; /* Centraliza ícone e texto horizontalmente */
 }
 
-/* Estilo para as imagens dentro dos botões de metas */
+/* Estilo para as imagens nos botões */
 .botoes-metas img {
-    width: 100px; /* Define a largura da imagem como 100px */
-    height: 100px; /* Define a altura da imagem como 100px */
-    border-radius: 50%; /* Torna a imagem redonda */
-    border: 2px solid#f5f7f9; /* Define a cor da borda como azul */
-    padding: 10px; /* Adiciona um preenchimento de 10px ao redor da imagem */
-    transition: transform 0.2s ease; /* Adiciona uma transição suave ao aplicar o efeito de hover */
+    width: 80px; /* Reduz tamanho do ícone */
+    height: 80px; /* Altura proporcional ao novo layout */
+    border-radius: 50%; /* Torna as imagens redondas */
+    border: 2px solid #f5f7f9; /* Borda ao redor do ícone */
+    padding: 5px; /* Espaçamento interno menor */
+    transition: transform 0.2s ease; /* Efeito suave no hover */
 }
 
-/* Efeito de hover para as imagens dos botões de metas */
+/* Efeito hover nos ícones */
 .botoes-metas img:hover {
-    transform: scale(1.1); /* Amplia a imagem ao passar o mouse sobre ela */
+    transform: scale(1.1); /* Aumenta levemente o tamanho no hover */
 }
 
-/* Estilo para o texto abaixo das imagens dos botões de metas */
+/* Estilo do texto abaixo dos ícones */
 .botoes-metas p {
-    margin-top: 10px; /* Adiciona margem superior ao texto */
-    font-weight: bold; /* Define o texto como negrito */
-    color: #333; /* Define a cor do texto como cinza escuro */
+    margin-top: 5px; /* Espaçamento menor entre ícone e texto */
+    font-weight: bold; /* Texto em negrito */
+    color: #333; /* Cor do texto */
 }
+
 
 /* Força o layout dos botões de metas a ser flexível e centralizado dentro de uma seção específica */
 section.minhas-metas .botoes-metas {
@@ -608,6 +617,7 @@ header {
     height: 60px; /* Define a altura do cabeçalho */
     text-align: center; /* Centraliza o texto dentro do cabeçalho */
     padding: 15px; /* Adiciona espaçamento interno ao cabeçalho */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo do conteúdo principal */

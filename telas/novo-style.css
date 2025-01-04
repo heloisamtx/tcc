@@ -10,7 +10,9 @@ body {
     background-color: #f5e9cc; /* Cor de fundo do corpo */
     color: #333; /* Cor do texto */
     overflow-x: hidden; /* Impede a rolagem horizontal */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+
 
 /* Cabeçalho */
 header.cabecalho {
@@ -19,19 +21,23 @@ header.cabecalho {
     color: white; /* Cor do texto */
     padding: 20px; /* Espaçamento interno do cabeçalho */
     position: relative; /* Permite o uso de posicionamento absoluto no conteúdo interno */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 /* Título do cabeçalho */
 header .cabecalho-titulo {
     font-size: 32px; /* Tamanho da fonte do título */
     font-family: 'league spartan'; /* Define uma fonte personalizada para o título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 /* Botão de voltar como imagem */
 /* Botão de voltar como imagem */
 .btn-voltar {
     position: absolute; /* Posiciona o botão de voltar de forma absoluta dentro do cabeçalho */
-    top: 20px; /* Distância do topo */
+    top: 15px; /* Distância do topo */
     left: 20px; /* Distância da esquerda */
     width: 45px; /* Aumenta a largura do botão */
     height: 45px; /* Aumenta a altura do botão */
@@ -88,6 +94,8 @@ header .cabecalho-titulo {
     left: 50%; /* Centraliza o texto horizontalmente */
     transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
     pointer-events: none; /* Impede a interação com esse texto (não pode ser selecionado ou apagado) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 /* Área de conteúdo editável */
