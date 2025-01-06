@@ -123,3 +123,34 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeScreenNavigation();
     initializeMetasEditaveis();
 });
+// Seleciona os elementos
+const configButton = document.getElementById("configButton");
+const configModal = document.getElementById("configModal");
+const closeModal = document.querySelector(".close");
+const deleteAccountButton = document.getElementById("deleteAccountButton");
+
+// Abre o modal ao clicar no botão de configuração
+configButton.addEventListener("click", () => {
+  configModal.style.display = "block";
+});
+
+// Fecha o modal ao clicar no 'x'
+closeModal.addEventListener("click", () => {
+  configModal.style.display = "none";
+});
+
+// Fecha o modal ao clicar fora dele
+window.addEventListener("click", (event) => {
+  if (event.target === configModal) {
+    configModal.style.display = "none";
+  }
+});
+
+// Confirmação de exclusão de conta
+deleteAccountButton.addEventListener("click", () => {
+  const confirmation = confirm("Você tem certeza que deseja excluir sua conta?");
+  if (confirmation) {
+    alert("Conta excluída com sucesso!");
+    // Aqui você pode adicionar o código para excluir a conta do usuário
+  }
+});

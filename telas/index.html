@@ -9,7 +9,7 @@
     <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Adigiana+Toybox&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
-    
+
 
     <!-- Estilo -->
     <link rel="stylesheet" href="style.css">
@@ -70,6 +70,19 @@
                 <header>
                     <img id="logout-icon" src="imagens/logout.png" alt="Logout" class="logout-icon" />
                     <h2>Olá, usuário!</h2>
+                    <!-- Botão de Configuração -->
+                    <button id="configButton">⚙️ Configurações</button>
+
+                    <!-- Modal para Exclusão de Conta -->
+                    <div id="configModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Configurações</h2>
+                            <button id="deleteAccountButton" class="delete">Excluir Conta</button>
+                        </div>
+                    </div>
+
+
                 </header>
 
                 <main>
@@ -79,35 +92,35 @@
                             <input type="text" id="valor-saldo" value="R$ 0,00" />
                         </section>
 
-                    <section class="minhas-metas">
-                        <h2>Minhas Metas</h2>
-                        <div class="botoes-metas">
-                            <a href="meta1.html">
-                                <img src="imagens/meta-1.png" alt="Meta 1">
-                                <p>Minhas Metas</p>
-                            </a>
-                            <a href="meta2.html">
-                                <img src="imagens/meta-2.png" alt="Meta 2">
-                                <p>Meus Gastos</p>
-                            </a>
-                            <a href="meta3.html">
-                                <img src="imagens/meta-3.png" alt="Meta 3">
-                                <p>Minhas Tarefas</p>
-                            </a>
-                        </div>
-                    </section>
-                    
-                    <footer>
-                        <p>Obrigado por visitar o nosso site!</p>
-                        <p>Quer ajuda para organizar sua mesada?</p>
-                        <button class="btn" onclick="compartilharLink()">Convide um responsável</button>
-                    </footer>
+                        <section class="minhas-metas">
+                            <h2>Minhas Metas</h2>
+                            <div class="botoes-metas">
+                                <a href="meta1.html">
+                                    <img src="imagens/meta-1.png" alt="Meta 1">
+                                    <p>Minhas Metas</p>
+                                </a>
+                                <a href="meta2.html">
+                                    <img src="imagens/meta-2.png" alt="Meta 2">
+                                    <p>Meus Gastos</p>
+                                </a>
+                                <a href="meta3.html">
+                                    <img src="imagens/meta-3.png" alt="Meta 3">
+                                    <p>Minhas Tarefas</p>
+                                </a>
+                            </div>
+                        </section>
+
+                        <footer>
+                            <p>Obrigado por visitar o nosso site!</p>
+                            <p>Quer ajuda para organizar sua mesada?</p>
+                            <button class="btn" onclick="compartilharLink()">Convide um responsável</button>
+                        </footer>
                 </main>
             </div>
         </div>
     </div>
 
-   
+
 
     <!-- Scripts -->
     <script src="script.js"></script>
