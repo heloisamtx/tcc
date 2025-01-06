@@ -558,29 +558,29 @@ header h2 {
 .minhas-metas {
     text-align: center; /* Centraliza o texto dentro da seção */
     margin: 20px auto; /* Adiciona margem de 20px nas laterais e margem automática para centralizar */
+    width: 100%;
+    max-width: 800px;
 }
 /* Estilo para os botões de metas (layout horizontal) */
 .botoes-metas {
     display: flex; /* Organiza os botões em linha (horizontal) */
-    justify-content: center; /* Centraliza os botões horizontalmente */
+    justify-content: space-between;
     align-items: center;
-    gap: 30px; /* Espaçamento horizontal entre os botões */
-    padding: 10px;
+    gap: 20px; /* Espaçamento horizontal entre os botões */
+    padding: 20px;
 }
 
 /* Estilo para cada botão de meta */
 .botoes-metas a {
     flex: 1;
-    max-width: 150px;
-    text-decoration: none; /* Remove sublinhado do texto */
-    color: black; /* Texto preto */
-   
-    
-    display: flex; /* Alinha ícone e texto verticalmente */
-    flex-direction: column; /* Ícone em cima, texto embaixo */
-    align-items: center; /* Centraliza ícone e texto horizontalmente */
-    gap: 8px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
+   
 
 /* Estilo para as imagens nos botões */
 .botoes-metas img {
