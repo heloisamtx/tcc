@@ -229,6 +229,10 @@ footer {
 
 /* Estilo geral do Dashboard */
 #tela-dashboard {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
     display: none; /* Oculta a tela do dashboard por padrão */
     width: 100%; /* Ocupa toda a largura disponível */
     max-width: 400px; /* Define um limite máximo de largura */
@@ -513,6 +517,8 @@ header h2 {
 
 /* Estilo do container de saldo */
 .saldo {
+    height: 120px; /* Reduzido de 180px */
+    margin-bottom: 15px;
     width: 100%; /* O container ocupa toda a largura disponível */
     height: 180px; /* Define uma altura fixa de 200px para o container */
     background-image: url('imagens/saldo-fundo.png'); /* Define a imagem de fundo */
@@ -557,19 +563,23 @@ header h2 {
 .botoes-metas {
     display: flex; /* Organiza os botões em linha (horizontal) */
     justify-content: center; /* Centraliza os botões horizontalmente */
-    gap: 20px; /* Espaçamento horizontal entre os botões */
-    margin-top: 20px; /* Espaçamento superior */
-    flex-wrap: wrap; /* Permite quebra de linha se o espaço for insuficiente */
+    align-items: center;
+    gap: 30px; /* Espaçamento horizontal entre os botões */
+    padding: 10px;
 }
 
 /* Estilo para cada botão de meta */
 .botoes-metas a {
+    flex: 1;
+    max-width: 150px;
     text-decoration: none; /* Remove sublinhado do texto */
     color: black; /* Texto preto */
-    text-align: center; /* Texto centralizado */
+   
+    
     display: flex; /* Alinha ícone e texto verticalmente */
     flex-direction: column; /* Ícone em cima, texto embaixo */
     align-items: center; /* Centraliza ícone e texto horizontalmente */
+    gap: 8px;
 }
 
 /* Estilo para as imagens nos botões */
@@ -612,6 +622,8 @@ body {
 
 /* Estilo do cabeçalho */
 header {
+    height: 120px; /* Reduzido de 200px */
+    min-height: 120px;
     background-color: #333; /* Define a cor de fundo do cabeçalho como cinza escuro */
     color: white; /* Define a cor do texto como branco */
     height: 60px; /* Define a altura do cabeçalho */
