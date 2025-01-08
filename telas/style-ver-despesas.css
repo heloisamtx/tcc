@@ -1,0 +1,183 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    position: relative;
+}
+
+header .btn-back {
+    position: absolute;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+header .btn-back-img {
+    width: 30px;
+    height: 30px;
+}
+
+header h2 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+
+header .logo {
+    width: 50px;
+    height: auto;
+}
+
+header .logout-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Imagem principal */
+#meta-imagem {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#meta-imagem .img-meta {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Lista de Despesas */
+.lista-despesas {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f5f7f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lista-despesas h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#despesas-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#despesas-lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#despesas-lista li .descricao {
+    flex-grow: 1;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+#despesas-lista li button {
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#despesas-lista li button:hover {
+    background-color: #0056b3;
+}
+
+/* Pop-up de Deleção */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.popup-content button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.popup-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h2 {
+        font-size: 20px;
+    }
+
+    .lista-despesas {
+        padding: 15px;
+    }
+
+    #despesas-lista li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #despesas-lista li .descricao {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #despesas-lista li button {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}

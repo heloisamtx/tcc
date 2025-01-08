@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Despesas</title>
+    <link rel="stylesheet" href="style-ver-despesas.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <button class="btn-back" onclick="voltarParaInicial()">
+            <img src="imagens/voltar.png" alt="Voltar" class="btn-back-img">
+        </button>
+        <h2>Vizualize suas despesas cadastradas!</h2>
+        <img src="imagens/logo.png" alt="Logo" class="logo"> <!-- Logo -->
+        <img src="imagens/logout-icon.png" alt="Logout" class="logout-icon"> <!-- Logout -->
+    </header>
+
+    <!-- Imagem principal da tela -->
+    <section id="meta-imagem">
+        <img src="imagens/meta-1.png" alt="Meta 1" class="img-meta">
+    </section>
+
+    <!-- Listagem de Despesas -->
+    <section class="lista-despesas">
+        <h3>Despesas Cadastradas</h3>
+        <ul id="despesas-lista">
+            <!-- Itens dinâmicos serão inseridos aqui -->
+        </ul>
+    </section>
+
+    <!-- Pop-up de Confirmação de Deleção -->
+    <div id="popup-delecao" class="popup">
+        <div class="popup-content">
+            <p>Tem certeza de que deseja deletar esta despesa?</p>
+            <button onclick="confirmarDelecao()">Sim</button>
+            <button onclick="fecharPopup()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

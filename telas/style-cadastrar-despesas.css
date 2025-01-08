@@ -1,0 +1,123 @@
+/* Estilo geral */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    position: relative; /* Permite ajuste absoluto de elementos */
+}
+
+header .logo {
+    height: 50px;
+    order: 3; /* Move a logo para o lado direito */
+}
+
+header h2 {
+    font-size: 20px;
+    margin: 0 auto; /* Centraliza o título no layout flex */
+}
+
+header .logout-icon {
+    height: 30px;
+    cursor: pointer;
+    order: 2; /* Coloca o logout antes da logo */
+}
+
+/* Botão de voltar */
+.btn-back {
+    position: absolute; /* Posiciona livremente no header */
+    left: 10px; /* Alinha à esquerda */
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn-back-img {
+    height: 40px;
+    width: auto;
+}
+
+/* Imagem principal */
+#meta-imagem {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#meta-imagem .img-meta {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o formulário */
+.form-container {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Rodapé fixado no final */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    flex-shrink: 0;
+    margin-top: auto;
+}

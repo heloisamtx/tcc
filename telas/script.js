@@ -154,3 +154,91 @@ deleteAccountButton.addEventListener("click", () => {
     // Aqui você pode adicionar o código para excluir a conta do usuário
   }
 });
+// Função para voltar à página inicial
+function voltarParaInicial() {
+    window.location.href = "ver-despesas.html, cadastrar-despesas.html"; // Substitua pelo caminho correto da sua página inicial
+}
+
+// Função para cadastrar uma nova despesa
+function cadastrarDespesa(event) {
+    event.preventDefault(); // Impede o envio do formulário
+
+    // Captura os valores do formulário
+    const titulo = document.getElementById("titulo").value;
+    const descricao = document.getElementById("descricao").value;
+
+    // Verifica se os campos estão preenchidos
+    if (titulo.trim() === "" || descricao.trim() === "") {
+        alert("Por favor, preencha todos os campos!");
+        return;
+    }
+
+    // Cria um objeto de despesa
+    const despesa = { titulo, descricao };
+
+    // Adiciona a despesa à lista (armazenamento temporário local)
+    adicionarDespesaNaLista(despesa);
+
+    // Limpa os campos do formulário
+    document.getElementById("cadastro-form-despesa").reset();
+
+    alert("Despesa cadastrada com sucesso!");
+}
+
+// Função para adicionar a despesa à lista na página
+function adicionarDespesaNaLista(despesa) {
+    const lista = document.getElementById("despesas-lista");
+
+    // Cria um novo item de lista
+    const item = document.createElement("li");
+
+    // Configura o conteúdo do item
+    item.innerHTML = `
+        <strong>${despesa.titulo}</strong>
+        <span class="descricao">${despesa.descricao}</span>
+        <button onclick="mostrarPopup(this)">Excluir</button>
+    `;
+
+    // Adiciona o item à lista
+    lista.appendChild(item);
+}
+
+// Função para exibir o pop-up de confirmação de exclusão
+function mostrarPopup(button) {
+    const popup = document.getElementById("popup-delecao");
+    popup.style.display = "flex";
+
+    // Salva o item que será excluído
+    popup.dataset.itemParaExcluir = button.parentElement.outerHTML;
+}
+
+// Função para confirmar a exclusão
+function confirmarDelecao() {
+    const popup = document.getElementById("popup-delecao");
+
+    // Localiza o item na lista usando o HTML armazenado
+    const lista = document.getElementById("despesas-lista");
+    const itemHTML = popup.dataset.itemParaExcluir;
+
+    // Remove o item correspondente
+    const items = lista.querySelectorAll("li");
+    items.forEach((item) => {
+        if (item.outerHTML === itemHTML) {
+            lista.removeChild(item);
+        }
+    });
+
+    // Fecha o pop-up
+    fecharPopup();
+}
+
+// Função para fechar o pop-up
+function fecharPopup() {
+    const popup = document.getElementById("popup-delecao");
+    popup.style.display = "none";
+}
+
+// Adiciona o evento de envio ao formulário
+document
+    .getElementById("cadastro-form-despesa")
+    ?.addEventListener("submit", cadastrarDespesa);
