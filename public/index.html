@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiggyBank - Login</title>
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Adigiana+Toybox&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="background">
+        <div id="app">
+            <!-- Tela Inicial -->
+            <div id="tela-inicial" class="screen">
+                <div class="logo-container">
+                    <h1 class="logo">PiggyBank</h1>
+                    <img src="imagens/logo.png" alt="Logo do PiggyBank" class="logo-imagem">
+                </div>
+                <button id="btn-entrar" class="btn btn-enter">Entrar</button>
+                <p class="frase-cadastro">Ainda não tem uma conta?</p>
+                <a href="#" id="link-cadastro" class="link-cadastro">Clique aqui para se cadastrar!</a>
+            </div>
+
+            <!-- Tela de Login -->
+            <div id="tela-login" class="screen hidden">
+                <button class="btn-back" onclick="voltarParaInicial()">
+                    <img src="imagens/voltar.png" alt="Voltar" class="btn-back-img">
+                </button>
+                <div class="logo-container">
+                    <h1 class="logo">PiggyBank</h1>
+                    <img src="imagens/logo.png" alt="Logo do PiggyBank" class="logo-imagem">
+                </div>
+                <h2>Bem-vindo</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Seu email" required>
+                    <input type="password" id="login-password" placeholder="Sua senha" required>
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+            </div>
+
+            <!-- Tela de Cadastro -->
+            <div id="tela-cadastro" class="screen hidden">
+                <button class="btn-back" onclick="voltarParaInicial()">
+                    <img src="imagens/voltar.png" alt="Voltar" class="btn-back-img">
+                </button>
+                <div class="logo-container">
+                    <h1 class="logo">PiggyBank</h1>
+                    <img src="imagens/logo.png" alt="Logo do PiggyBank" class="logo-imagem">
+                </div>
+                <h2>Crie sua conta!</h2>
+                <form id="cadastro-form">
+                    <input type="email" id="cadastro-email" placeholder="Seu email" required>
+                    <input type="text" id="cadastro-nome" placeholder="Seu nome" required>
+                    <input type="text" id="cadastro-endereco" placeholder="Seu endereço" required>
+                    <input type="password" id="cadastro-senha" placeholder="Sua senha" required>
+                    <button type="submit" class="btn">Criar conta</button>
+                </form>
+            </div>
+
+            <!-- Tela de Dashboard -->
+            <div id="tela-dashboard" class="screen hidden">
+                <header>
+                    <img id="logout-icon" src="imagens/logout.png" alt="Logout" class="logout-icon" />
+                    <h2>Olá!</h2>
+
+                    <button class="btn-back" onclick="voltarParaInicial()">
+                        <img src="imagens/voltar.png" alt="Voltar" class="btn-back-img">
+                    </button>
+                    <!-- Botão de Configuração -->
+                    <button id="configButton">Configurações</button>
+
+                    <!-- Modal para Exclusão de Conta -->
+                    <div id="configModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Configurações</h2>
+                            <button id="deleteAccountButton" class="delete">Excluir Conta</button>
+                        </div>
+                    </div>
+
+                </header>
+
+                <main>
+                    <section>
+                        <section id="saldo" class="saldo">
+                            <h3>Saldo disponível</h3>
+                            <input type="text" id="valor-saldo" value="R$ 0,00" />
+                        </section>
+
+                        <section class="minhas-metas">
+                            <h2>Despesas</h2>
+                            <div class="botoes-metas">
+                                <a href="ver-despesas.html">
+                                    <img src="imagens/meta-1.png" alt="Meta 1">
+                                    <p>Minhas Despesas</p>
+                                </a>
+                                <a href="cadastrar-despesas.html">
+                                    <img src="imagens/meta-2.png" alt="Meta 2">
+                                    <p>Cadastrar Despesa</p>
+                                </a>
+                            </div>
+                        </section>
+
+                        <footer>
+                            <p>Obrigado por visitar o nosso site!</p>
+                            <p>Quer ajuda para organizar sua mesada?</p>
+                            <button class="btn" onclick="compartilharLink()">Convide um responsável</button>
+                        </footer>
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
