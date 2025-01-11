@@ -121,15 +121,7 @@ app.post('/login', async (req, res) => {
             }
         });
 
-        
-        // await connection.end();
 
-        // if (rows.length === 0 || !(await bcrypt.compare(senhaRequest, rows[0].senha))) {
-        //     return res.status(401).json({ message: 'E-mail ou senha inválidos.' });
-        // }
-
-        // const user = rows[0];
-        // res.json({ message: 'Login realizado com sucesso.', nomeUsuario: user.nome });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Erro ao realizar login.' });
@@ -197,17 +189,22 @@ app.get('/despesas/ver/:idConta', async (req, res) => {
         console.log("Conexão com o banco estabelecida.");
 
         // Query para buscar as despesas com base no idConta
-        const query = 'SELECT titulo, gastos, id_conta FROM TbMovimenta WHERE id_conta = ?';
+        const query = 'SELECT id, titulo, gastos, id_conta FROM TbMovimenta WHERE id_conta = ?';
         console.log("Executando SQL:", query, "Parâmetros:", [idConta]);
 
         const [rows] = await connection.execute(query, [idConta]);
         console.log("Despesas encontradas:", rows);
 
+
         // Encerra a conexão com o banco
         await connection.end();
         console.log("Conexão encerrada.");
+        
+        console.log("Despesas encontradas (com ID):", JSON.stringify(rows, null, 2));
+
 
         // Retorna os dados encontrados para o frontend
+
         res.status(200).json(rows);
     } catch (error) {
         console.error("Erro ao executar SQL:", error.message);
@@ -215,34 +212,56 @@ app.get('/despesas/ver/:idConta', async (req, res) => {
     }
 });
 
+// Rota para deletar uma conta com base no idConta
+app.delete('/contas/deletar/:idConta', async (req, res) => {
+    console.log("CHEGUEI NO BACKEND PRA DELETAR");
+    const { idConta } = req.params;
 
-// // Rota para editar uma despesa
-// app.put('/despesas/ver:id', (req, res) => {
-//     const { titulo, descricao } = req.body;
-//     const { id } = req.params;
+    console.log("CHEGUEI NO BACKEND PRA DELETAR");
 
-//     const query = 'UPDATE TbMovimenta SET titulo = ?, descricao = ? WHERE id = ?';
 
-//     db.query(query, [titulo, descricao, id], (err, result) => {
-//         if (err) {
-//             return res.status(500).json({ success: false, message: 'Erro ao editar despesa' });
-//         }
-//         res.status(200).json({ success: true, message: 'Despesa editada com sucesso!' });
-//     });
-// });
+    try {
+        // Estabelece a conexão com o banco de dados
+        console.log("Requisição recebida para deletar conta com id:", idConta);
+        const connection = await mysql.createConnection(dbConfig);
+        console.log("Conexão com o banco estabelecida PARA DELETAR A CONTA.");
 
-// // Rota para deletar uma despesa
-// app.delete('/despesas/deletar:id', (req, res) => {
-//     const { id } = req.params;
-//     const query = 'DELETE FROM TbMovimenta WHERE id = ?';
+        console.log("VAI COMEÇAR A PUTARIA");
 
-//     db.query(query, [id], (err, result) => {
-//         if (err) {
-//             return res.status(500).json({ success: false, message: 'Erro ao deletar despesa' });
-//         }
-//         res.status(200).json({ success: true, message: 'Despesa deletada com sucesso!' });
-//     });
-// });
+        await connection.execute('DELETE FROM TbMovimenta WHERE id_conta = ?', [idConta]);
+        await connection.execute('DELETE FROM Usuario WHERE id_conta = ?', [idConta]);
+
+
+
+        // Query para deletar a conta
+        const query = 'DELETE FROM TbConta WHERE id = ?';
+        console.log("Executando SQL:", query, "Parâmetro:", idConta);
+
+        console.log("TERMINOU A PUTARIA");
+
+
+        const [result] = await connection.execute(query, [idConta]);
+
+        // Encerra a conexão com o banco
+        await connection.end();
+        console.log("Conexão encerrada.");
+
+        // Verifica se a conta foi realmente deletada
+        if (result.affectedRows === 0) {
+            console.log("Nenhuma conta encontrada com o ID fornecido.");
+            return res.status(404).json({ message: "Conta não encontrada." });
+        } else {
+            console.log("Conta deletada com sucesso.");
+            return res.status(200).json({ success: true, message: "Conta deletada com sucesso." });
+        }
+
+        
+    } catch (error) {
+        console.error("Erro ao deletar conta:", error.message);
+        return res.status(500).json({ message: 'Erro ao deletar conta.', error: error.message });
+    }
+});
+
 
 // Inicializa o servidor
 app.listen(PORT, () => {

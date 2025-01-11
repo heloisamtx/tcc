@@ -81,6 +81,7 @@ if (loginForm) {
             localStorage.setItem('userId', data.user.id);
             localStorage.setItem('idConta', data.user.idConta);
             localStorage.setItem('id_conta', data.user.id_conta);
+            //localStorage.setItem('idDespesa', data.user.id);
 
             mostrarDashboard(data.nomeUsuario);
         } catch (error) {
@@ -237,75 +238,7 @@ if (saldoBtn && saldoInput && valorSaldo) {
     });
 }
 
-// //Envia os dados do form de cadastro de despesa
-// async function cadastrarDespesa(event) {
-//     if (event) event.preventDefault();
 
-//     const titulo = document.getElementById("titulo").value;
-//     const descricao = document.getElementById("descricao").value;
-//     const idConta = localStorage.getItem("idConta");
-
-
-//     try {
-//         const response = await fetch('/despesas/cadastrar', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({ titulo, descricao, idConta }),
-//         });
-
-//         if (!response.ok) {
-//             const errorData = await response.json();
-//             console.error("Erro na requisição:", errorData.message);
-//             throw new Error(`Erro: ${response.status} - ${errorData.message}`);
-//         }
-
-//         const data = await response.json();
-//         console.log("Despesa cadastrada com sucesso:", data);
-//         alert("Despesa cadastrada com sucesso!");
-//         showScreen('tela-inicial'); 
-        
-//     } catch (error) {
-//         console.error("Erro na requisição:", error);
-//         alert("Erro ao cadastrar despesa: " + error.message);
-//     }
-
-// }
-
-// document.getElementById("btn-cadastrar-despesa").addEventListener("click", async (event) => {
-//     event.preventDefault();
-
-//     const titulo = document.getElementById("titulo").value;
-//     const descricao = document.getElementById("descricao").value;
-//     const idConta = localStorage.getItem("idConta");
-
-
-//     try {
-//         const response = await fetch('/despesas/cadastrar', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({ titulo, descricao, idConta }),
-//         });
-
-//         if (!response.ok) {
-//             const errorData = await response.json();
-//             console.error("Erro na requisição:", errorData.message);
-//             throw new Error(`Erro: ${response.status} - ${errorData.message}`);
-//         }
-
-//         const data = await response.json();
-//         console.log("Despesa cadastrada com sucesso:", data);
-//         alert("Despesa cadastrada com sucesso!");
-//         showScreen('tela-inicial'); 
-        
-//     } catch (error) {
-//         console.error("Erro na requisição:", error);
-//         alert("Erro ao cadastrar despesa: " + error.message);
-//     }
-// });
 
 
 
@@ -345,7 +278,15 @@ async function buscarDespesas(idConta) {
         throw new Error('Erro ao buscar despesas');
     }
 
-    return response.json(); // Retorna as despesas como objeto
+    //return response.json(); // Retorna as despesas como objeto
+
+    const despesas = await response.json(); // Recebe as despesas como objeto
+    console.log('Despesas recebidas do backend:', despesas);
+
+    // Salva as despesas no localStorage
+    localStorage.setItem('despesas', JSON.stringify(despesas));
+
+    return despesas;
 }
 
 // Função para exibir despesas na lista
@@ -380,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div>
                     <button onclick="editarDespesa(${despesa.id})">Editar</button>
-                    <button onclick="deletarDespesa(${despesa.id})">Deletar</button>
+                    <button onclick="abrirPopupDelecao(${despesa.id})">Deletar</button>
                 </div>
             `;
             listaDespesas.appendChild(li);
@@ -391,17 +332,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// // Função para editar uma despesa (placeholder)
-// function editarDespesa(id) {
-//     console.log(`Editar despesa com ID: ${id}`);
-//     // Implementar lógica para edição
-// }
+async function deletarConta() {
+    const idConta = parseInt(localStorage.getItem('idConta')); // Recupera o ID da conta do localStorage
+    if (!idConta) {
+        alert('Conta não encontrada. Faça login novamente.');
+        return;
+    }
 
-// Função para deletar uma despesa (placeholder)
-// async function deletarDespesa(id) {
-//     console.log(`Deletar despesa com ID: ${id}`);
-//     // Implementar lógica para exclusão
-// }
+    const confirmar = confirm('Tem certeza de que deseja deletar sua conta?');
+    if (!confirmar) {
+        return;
+    }
+   
+    await fetch(`${API_BASE_URL}/contas/deletar/${idConta}`, {
+        method: 'DELETE',
+    });   
+
+    alert('Conta deletada com sucesso.');
+    localStorage.clear(); // Limpa o localStorage
+    window.location.href = 'index.html'; // Redireciona para a página inicial
+    
+}
+
+
 
 
 

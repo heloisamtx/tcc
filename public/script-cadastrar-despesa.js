@@ -85,6 +85,17 @@ document.getElementById("btn-cadastrar-despesa").addEventListener("click", async
         }
 
         const data = await response.json();
+
+        // const data = await response.status(200).json({
+        //     message: 'cadastro realizado com sucesso.',
+        //     despesa: {
+        //         id: despesa.id
+        //     }
+        // });       
+
+
+        // localStorage.setItem('idDespesa', data.user.id);
+
         console.log("Despesa cadastrada com sucesso:", data);
         alert("Despesa cadastrada com sucesso!");
         //showScreen('tela-inicial'); 
