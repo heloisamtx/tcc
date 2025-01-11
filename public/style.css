@@ -225,6 +225,7 @@ footer {
     background-color: #f0f0f0; /* Define a cor de fundo */
     padding: 10px; /* Adiciona espaçamento interno */
     border-radius: 5px; /* Adiciona bordas arredondadas */
+    
 }
 
 /* Estilo geral do Dashboard */
@@ -334,6 +335,9 @@ footer p {
     font-family: league spartan; /* Define a fonte do texto */
     color: white; /* Define a cor do texto */
     margin-bottom: 10px; /* Adiciona espaçamento inferior */
+    text-align: center;
+
+
 }
 
 footer button {
@@ -369,7 +373,7 @@ header h2 {
 }
 
 header .btn-logout {
-    background-color: #ff5733; /* Define a cor de fundo do botão de logout */
+    background-color: #f8f0ee; /* Define a cor de fundo do botão de logout */
     border: none; /* Remove a borda padrão */
     padding: 10px 20px; /* Adiciona espaçamento interno */
     cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
@@ -379,7 +383,7 @@ header .btn-logout {
 }
 
 header .btn-logout:hover {
-    background-color: #c0392b; /* Altera a cor do botão ao passar o mouse */
+    background-color: #fbf1f0; /* Altera a cor do botão ao passar o mouse */
 }
 
 /* Estilo do botão */
@@ -441,6 +445,8 @@ footer p {
     font-family: 'League Spartan', sans-serif; /* Define a fonte do texto */
     color: white; /* Define a cor do texto */
     margin-bottom: 10px; /* Adiciona espaçamento inferior */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 footer button {
@@ -537,7 +543,7 @@ header h2 {
 /* Estilo para o título dentro do container de saldo */
 .saldo h3 {
     margin: 0; /* Remove qualquer margem padrão do título */
-    font-size: 18px; /* Define o tamanho da fonte do título */
+    font-size: 22px; /* Define o tamanho da fonte do título */
     color: black; /* Define a cor do título como preto */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -647,3 +653,11 @@ header {
 }
 
 
+.p footer {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}

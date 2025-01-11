@@ -37,7 +37,7 @@
                     <h1 class="logo">PiggyBank</h1>
                     <img src="imagens/logo.png" alt="Logo do PiggyBank" class="logo-imagem">
                 </div>
-                <h2>Bem-vindo</h2>
+                <h2>Bem-vindo!</h2>
                 <form id="login-form">
                     <input type="email" id="login-email" placeholder="Seu email" required>
                     <input type="password" id="login-password" placeholder="Sua senha" required>
@@ -69,22 +69,6 @@
                 <header>
                     <img id="logout-icon" src="imagens/logout.png" alt="Logout" class="logout-icon" />
                     <h2>Olá!</h2>
-
-                    <button class="btn-back" onclick="voltarParaInicial()">
-                        <img src="imagens/voltar.png" alt="Voltar" class="btn-back-img">
-                    </button>
-                    <!-- Botão de Configuração -->
-                    <button id="configButton">Configurações</button>
-
-                    <!-- Modal para Exclusão de Conta -->
-                    <div id="configModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h2>Configurações</h2>
-                            <button id="deleteAccountButton" class="delete">Excluir Conta</button>
-                        </div>
-                    </div>
-
                 </header>
 
                 <main>
@@ -94,31 +78,40 @@
                             <input type="text" id="valor-saldo" value="R$ 0,00" />
                         </section>
 
-                        <section class="minhas-metas">
-                            <h2>Despesas</h2>
-                            <div class="botoes-metas">
-                                <a href="ver-despesas.html">
-                                    <img src="imagens/meta-1.png" alt="Meta 1">
-                                    <p>Minhas Despesas</p>
-                                </a>
-                                <a href="cadastrar-despesas.html">
-                                    <img src="imagens/meta-2.png" alt="Meta 2">
-                                    <p>Cadastrar Despesa</p>
-                                </a>
-                            </div>
-                        </section>
-
-                        <footer>
-                            <p>Obrigado por visitar o nosso site!</p>
-                            <p>Quer ajuda para organizar sua mesada?</p>
-                            <button class="btn" onclick="compartilharLink()">Convide um responsável</button>
-                        </footer>
+                    <section class="minhas-metas">
+                        <h2>Metas financeiras</h2>
+                        <div class="botoes-metas">
+                            <a href="ver-despesas.html" onclick="return verDespesas(event)">
+                                <img src="imagens/meta-1.png" alt="Meta 1">
+                                <p>Minhas metas</p>
+                            </a>
+                            <a href="cadastrar-despesas.html">
+                                <img src="imagens/meta-1.png" alt="Meta 2">
+                                <p>Cadastrar metas</p>
+                            </a>   
+                            <a href="ver-tarefa.html">
+                                <img src="imagens/meta-2.png" alt="Meta 2">
+                                <p>Minhas tarefas</p>
+                            </a>       
+                            <a href="cadastrar-tarefa.html">
+                                <img src="imagens/meta-2.png" alt="Meta 2">
+                                <p>Cadastrar tarefas</p>
+                            </a>      
+                                               
+                        </div>
+                    </section>
+                    
+                    <footer>
+                        <p>Obrigado por visitar o nosso site!</p>
+                        <p>Quer ajuda para organizar sua mesada?</p>
+                        <button class="btn" onclick="compartilharLink()">Convide um responsável</button>
+                    </footer>
                 </main>
             </div>
         </div>
     </div>
 
-
+   
 
     <!-- Scripts -->
     <script src="script.js"></script>

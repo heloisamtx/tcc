@@ -5,8 +5,7 @@ body {
     background-color: #fff2ef;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Define altura mínima da página */
-}
+    min-height: 100vh; /* Define altura mínima da página */}
 
 /* Cabeçalho */
 header {
@@ -27,13 +26,13 @@ main {
     justify-content: space-between; /* Garante o espaçamento entre os elementos */
 }
 
-
 header .btn-back {
     position: absolute;
     left: 20px;
     background: none;
     border: none;
     cursor: pointer;
+
     .btn-back-img {
         height: 40px;
         width: auto;
@@ -50,6 +49,7 @@ header .logo {
     width: 50px;
     height: auto;
 }
+
 header h2 {
     font-size: 20px;
     margin: 0 auto; /* Centraliza o título no layout flex */
@@ -88,12 +88,11 @@ header h2 {
     font-family: league spartan;
     box-shadow: 0 0 5px #f7edf3; /* Adiciona um brilho ao redor do campo */
     font-family: league spartan;
-   
 }
+
 h3  {font-family: league spartan;
     font-size: 25px;
 }
-
 #despesas-lista {
     list-style: none;
     padding: 0;
@@ -202,7 +201,6 @@ h3  {font-family: league spartan;
     }
 }
 
-
 /* Rodapé */
 footer {
     display: flex;
@@ -220,4 +218,3 @@ footer {
 .hidden {
     display: none;
 }
-

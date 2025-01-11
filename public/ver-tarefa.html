@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar despesas</title>
-    <link rel="stylesheet" href="style-ver-despesas.css">
+    <link rel="stylesheet" href="style-ver-tarefa.css">
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -12,18 +12,18 @@
         <button class="btn-back" onclick="voltarParaInicial()">
             <img src="imagens/voltar-azul.png" alt="Voltar" class="btn-back-img">
         </button>
-        <h2>Painel de metas financeiras</h2>
+        <h2>Painel de tarefas financeiras</h2>
         <img src="imagens/logo-azul.png" alt="Logo" class="logo">
     </header>
 
     <!-- Imagem principal da tela -->
     <section id="meta-imagem">
-        <img src="imagens/logo-meta.png" alt="Meta 1" class="img-meta">
+        <img src="imagens/meta-2.png" alt="Meta 1" class="img-meta">
     </section>
 
     <!-- Listagem de Despesas -->
     <section class="lista-despesas">
-        <h3>Metas financeiras cadastradas</h3>
+        <h3>Tarefas financeiras cadastradas</h3>
         <ul id="despesas-lista">
             <!-- Os itens de despesas serão inseridos dinamicamente aqui -->
         </ul>
@@ -32,7 +32,7 @@
     <!-- Pop-up de Confirmação de Deleção -->
     <div id="popup-delecao" class="popup hidden">
         <div class="popup-content">
-            <p>Tem certeza de que deseja deletar esta despesa?</p>
+            <p>Tem certeza de que deseja deletar esta Tarefa?</p>
             <button id="confirmar-delecao">Sim</button>
             <button onclick="fecharPopup()">Cancelar</button>
         </div>

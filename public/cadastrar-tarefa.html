@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Despesa</title>
-    <link rel="stylesheet" href="style-cadastrar-despesas.css"> <!-- Se o CSS for externo -->
+    <title>Cadastrar despesa</title>
+    <link rel="stylesheet" href="style-cadastrar-tarefa.css"> <!-- Se o CSS for externo -->
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -13,25 +13,25 @@
             <button class="btn-back" onclick="voltarParaInicial()">
                 <img src="imagens/voltar-azul.png" alt="Voltar" class="btn-back-img">
             </button>
-            <h2>Painel de metas</h2>
+            <h2>Painel de tarefas financeiras</h2>
             <img src="imagens/logo-azul.png" alt="Logo" class="logo"> <!-- Logo -->
             
         </header>
 
         <!-- Imagem principal da tela -->
         <section id="meta-imagem">
-            <img src="imagens/logo-meta.png" alt="Meta 2" class="img-meta">
+            <img src="imagens/meta-2.png" alt="Meta 2" class="img-meta">
         </section>
 
         <!-- Formulário para cadastro de despesa -->
         <section class="form-container">
-            <h3>Cadastrar nova meta financeira</h3>
+            <h3>Cadastrar nova tarefa financeira</h3>
             <form id="cadastro-form-despesa" method="POST">
-                <label for="titulo">Descrição da meta:</label>
+                <label for="titulo">Título:</label>
                 <input type="text" id="titulo" name="titulo" required>
-                <label for="descricao">Valor:</label>
-                <input id="descricao" name="descricao" type="text" required placeholder="0,00" />
-                <!--<textarea id="descricao" name="descricao" rows="" required></textarea>-->
+                <label for="descricao">Descrição:</label>
+                <input id="descricao" name="descricao" type="text" />
+                <!--<textarea id="descricao" name="descricao" rows="1" required></textarea>-->
                 <button type="submit" id="btn-cadastrar-despesa">Cadastrar meta</button>
             </form>
         </section>

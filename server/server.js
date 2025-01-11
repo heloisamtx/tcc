@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 const dbConfig = {
     host: 'localhost',
     user: 'root',
-    password: '123456',
+    password: 'root',
     database: 'piggy'
 };
 
@@ -159,10 +159,10 @@ app.put('/saldo', async (req, res) => {
 
 // Rota para cadastrar uma nova despesa
 app.post('/despesas/cadastrar', async (req, res) => {
-    const { titulo, descricao } = req.body;
+    const { titulo, descricao, idConta } = req.body;
 
     console.log("Recebido do cliente:", req.body);
-
+    
     if (!titulo || !descricao) {
         return res.status(400).json({ message: "Título e descrição são obrigatórios." });
     }
@@ -171,10 +171,10 @@ app.post('/despesas/cadastrar', async (req, res) => {
         const connection = await mysql.createConnection(dbConfig);
         console.log("Conexão com o banco estabelecida.");
 
-        const query = 'INSERT INTO TbMovimenta (titulo, gastos) VALUES (?, ?)';
-        console.log("Executando SQL:", query, "Parâmetros:", [titulo, descricao]);
+        const query = 'INSERT INTO TbMovimenta (titulo, gastos, id_conta) VALUES (?, ?, ?)';
+        console.log("Executando SQL:", query, "Parâmetros:", [titulo, descricao, idConta]);
 
-        const [result] = await connection.execute(query, [titulo, descricao]);
+        const [result] = await connection.execute(query, [titulo, descricao, idConta]);
         console.log("Resultado da execução:", result);
 
         await connection.end();
@@ -188,44 +188,61 @@ app.post('/despesas/cadastrar', async (req, res) => {
 });
 
 // Rota para listar todas as despesas
-app.get('/despesas/ver', (req, res) => {
-    const query = 'SELECT * FROM TbMovimenta';
-    
-    db.query(query, (err, results) => {
-        if (err) {
-            return res.status(500).json({ success: false, message: 'Erro ao carregar despesas' });
-        }
-        res.status(200).json(results);
-    });
+app.get('/despesas/ver/:idConta', async (req, res) => {
+    const { idConta } = req.params;
+
+    try {
+        // Estabelece a conexão com o banco de dados
+        const connection = await mysql.createConnection(dbConfig);
+        console.log("Conexão com o banco estabelecida.");
+
+        // Query para buscar as despesas com base no idConta
+        const query = 'SELECT titulo, gastos, id_conta FROM TbMovimenta WHERE id_conta = ?';
+        console.log("Executando SQL:", query, "Parâmetros:", [idConta]);
+
+        const [rows] = await connection.execute(query, [idConta]);
+        console.log("Despesas encontradas:", rows);
+
+        // Encerra a conexão com o banco
+        await connection.end();
+        console.log("Conexão encerrada.");
+
+        // Retorna os dados encontrados para o frontend
+        res.status(200).json(rows);
+    } catch (error) {
+        console.error("Erro ao executar SQL:", error.message);
+        res.status(500).json({ message: 'Erro ao buscar despesas.', error: error.message });
+    }
 });
 
-// Rota para editar uma despesa
-app.put('/despesas/ver:id', (req, res) => {
-    const { titulo, descricao } = req.body;
-    const { id } = req.params;
 
-    const query = 'UPDATE TbMovimenta SET titulo = ?, descricao = ? WHERE id = ?';
+// // Rota para editar uma despesa
+// app.put('/despesas/ver:id', (req, res) => {
+//     const { titulo, descricao } = req.body;
+//     const { id } = req.params;
 
-    db.query(query, [titulo, descricao, id], (err, result) => {
-        if (err) {
-            return res.status(500).json({ success: false, message: 'Erro ao editar despesa' });
-        }
-        res.status(200).json({ success: true, message: 'Despesa editada com sucesso!' });
-    });
-});
+//     const query = 'UPDATE TbMovimenta SET titulo = ?, descricao = ? WHERE id = ?';
 
-// Rota para deletar uma despesa
-app.delete('/despesas/deletar:id', (req, res) => {
-    const { id } = req.params;
-    const query = 'DELETE FROM TbMovimenta WHERE id = ?';
+//     db.query(query, [titulo, descricao, id], (err, result) => {
+//         if (err) {
+//             return res.status(500).json({ success: false, message: 'Erro ao editar despesa' });
+//         }
+//         res.status(200).json({ success: true, message: 'Despesa editada com sucesso!' });
+//     });
+// });
 
-    db.query(query, [id], (err, result) => {
-        if (err) {
-            return res.status(500).json({ success: false, message: 'Erro ao deletar despesa' });
-        }
-        res.status(200).json({ success: true, message: 'Despesa deletada com sucesso!' });
-    });
-});
+// // Rota para deletar uma despesa
+// app.delete('/despesas/deletar:id', (req, res) => {
+//     const { id } = req.params;
+//     const query = 'DELETE FROM TbMovimenta WHERE id = ?';
+
+//     db.query(query, [id], (err, result) => {
+//         if (err) {
+//             return res.status(500).json({ success: false, message: 'Erro ao deletar despesa' });
+//         }
+//         res.status(200).json({ success: true, message: 'Despesa deletada com sucesso!' });
+//     });
+// });
 
 // Inicializa o servidor
 app.listen(PORT, () => {
